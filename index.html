@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xinyanyani Projects | The Gold Standard in Infrastructure</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Montserrat:wght@300;400;600;700&display=swap');
+        
+        :root {
+            --gold: #c5a059;
+            --black: #0a0a0a;
+            --dark-gray: #1a1a1a;
+            --bone: #f8f5f0;
+        }
+
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            background-color: var(--bone);
+            color: var(--black);
+            scroll-behavior: smooth;
+        }
+
+        .font-serif { font-family: 'Cormorant Garamond', serif; }
+
+        .bg-gold { background-color: var(--gold); }
+        .text-gold { color: var(--gold); }
+        .border-gold { border-color: var(--gold); }
+        .bg-black-custom { background-color: var(--black); }
+        .text-black-custom { color: var(--black); }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
+                        url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .gold-underline {
+            position: relative;
+        }
+        .gold-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--gold);
+            transition: width 0.3s ease;
+        }
+        .gold-underline:hover::after {
+            width: 100%;
+        }
+
+        .service-card {
+            transition: all 0.5s ease;
+            border: 1px solid transparent;
+        }
+        .service-card:hover {
+            border-color: var(--gold);
+            background: white;
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .dark-section {
+            background-color: var(--black);
+            color: white;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Premium Navigation -->
+    <nav class="fixed w-full z-50 bg-white shadow-md border-b border-gold/10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex justify-between h-24 items-center">
+                <div class="flex flex-col">
+                    <span class="font-serif text-3xl font-bold text-black leading-none tracking-tight">XINYANYANI</span>
+                    <span class="text-[9px] uppercase tracking-[0.4em] text-gold font-bold mt-1">Projects & Construction</span>
+                </div>
+                
+                <div class="hidden lg:flex space-x-12 items-center text-[10px] font-bold uppercase tracking-widest text-black/60">
+                    <a href="#about" class="hover:text-gold transition-colors">Our Legacy</a>
+                    <a href="#services" class="hover:text-gold transition-colors">Services</a>
+                    <a href="#portfolio" class="hover:text-gold transition-colors">Portfolio</a>
+                    <a href="#contact" class="bg-black text-white px-8 py-3 rounded-sm hover:bg-gold hover:text-white transition-all duration-300">Inquire Now</a>
+                </div>
+
+                <button class="lg:hidden text-black"><i class="fas fa-bars text-2xl"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center pt-24 hero-gradient text-white relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 z-10">
+            <div class="lg:w-2/3">
+                <span class="text-gold font-bold uppercase tracking-[0.5em] text-xs mb-6 block">Celebrating 25 Years of Excellence</span>
+                <h1 class="font-serif text-6xl md:text-8xl lg:text-[7rem] leading-none mb-8">
+                    Architecting <br>
+                    <span class="italic font-light text-gold">Lasting Value.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-white/70 max-w-xl mb-12 leading-relaxed font-light">
+                    From specialized solar engineering to landmark retail projects, Xinyanyani Projects bridges the gap between technical precision and community growth.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6">
+                    <a href="#services" class="bg-gold text-white px-10 py-4 font-bold rounded-sm hover:bg-white hover:text-black transition shadow-lg shadow-gold/20">Our Services</a>
+                    <a href="#portfolio" class="border border-white/30 text-white px-10 py-4 font-bold rounded-sm hover:bg-gold hover:border-gold transition">View Portfolio</a>
+                </div>
+            </div>
+        </div>
+        <!-- Decorative Scroll element -->
+        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-40">
+            <span class="text-[9px] uppercase tracking-[0.3em] mb-4">Discover</span>
+            <div class="w-px h-16 bg-gold"></div>
+        </div>
+    </section>
+
+    <!-- Stats Ribbon -->
+    <div class="bg-white border-b border-gold/10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-2 lg:grid-cols-4 py-12 gap-8">
+            <div class="text-center">
+                <p class="font-serif text-4xl text-black mb-1">1999</p>
+                <p class="text-[9px] uppercase tracking-widest text-gold font-bold">Founding Year</p>
+            </div>
+            <div class="text-center">
+                <p class="font-serif text-4xl text-black mb-1">3GB / 3EB</p>
+                <p class="text-[9px] uppercase tracking-widest text-gold font-bold">CIDB Grading</p>
+            </div>
+            <div class="text-center">
+                <p class="font-serif text-4xl text-black mb-1">2000+</p>
+                <p class="text-[9px] uppercase tracking-widest text-gold font-bold">Solar Installs</p>
+            </div>
+            <div class="text-center">
+                <p class="font-serif text-4xl text-black mb-1">25y</p>
+                <p class="text-[9px] uppercase tracking-widest text-gold font-bold">Industry Tenure</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-32 bg-[#fcfbf9]">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex flex-col lg:flex-row items-center gap-20">
+                <div class="lg:w-1/2 reveal">
+                    <div class="relative">
+                        <img src="picture.jpeg?auto=format&fit=crop&w=800&q=80" alt="Construction Management" class="rounded-sm shadow-2xl relative z-10 grayscale hover:grayscale-0 transition duration-1000">
+                        <div class="absolute -bottom-6 -right-6 w-full h-full border-2 border-gold/20 -z-0"></div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 reveal">
+                    <span class="text-gold font-bold text-xs uppercase tracking-[0.3em] mb-4 block">The Managing Director</span>
+                    <h2 class="font-serif text-5xl text-black mb-8 leading-tight">Led by <br>Midas Ndamase</h2>
+                    <p class="text-black/60 text-lg leading-relaxed mb-8">
+                        With a foundation in Quantity Surveying from Manu Technical College and years of experience at Abba Space Structures, Midas Ndamase brings corporate-level precision to every project.
+                    </p>
+                    <p class="text-black/60 text-lg leading-relaxed mb-10">
+                        Having contributed to landmarks like the <span class="text-black font-bold italic">Southgate Mall</span> and <span class="text-black font-bold italic">East Rand Mall</span>, his vision for Xinyanyani Projects is built on fair pricing, uncompromising quality, and community empowerment.
+                    </p>
+                    <a href="#contact" class="text-black font-bold uppercase text-xs tracking-widest gold-underline">The History of Xinyanyani →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="text-center mb-24 reveal">
+                <h2 class="font-serif text-5xl text-black mb-6">Our Core Disciplines</h2>
+                <div class="w-20 h-0.5 bg-gold mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                <!-- Service 1 -->
+                <div class="service-card p-12 bg-bone reveal">
+                    <div class="w-16 h-16 bg-gold/10 flex items-center justify-center text-gold mb-8">
+                        <i class="fas fa-building text-3xl"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl text-black mb-4">Construction</h3>
+                    <p class="text-black/60 text-sm leading-relaxed mb-6">Turnkey general building works, from RDP residential housing to complex institutional facilities.</p>
+                    <ul class="text-[10px] font-bold uppercase tracking-widest text-gold space-y-2">
+                        <li>/ New Developments</li>
+                        <li>/ RDP Housing</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card p-12 bg-bone reveal" style="transition-delay: 100ms;">
+                    <div class="w-16 h-16 bg-gold/10 flex items-center justify-center text-gold mb-8">
+                        <i class="fas fa-solar-panel text-3xl"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl text-black mb-4">Solar Engineering</h3>
+                    <p class="text-black/60 text-sm leading-relaxed mb-6">Specialized installation of over 2,000 solar geysers for Eskom and sustainable lighting solutions.</p>
+                    <ul class="text-[10px] font-bold uppercase tracking-widest text-gold space-y-2">
+                        <li>/ Solar Geyser Systems</li>
+                        <li>/ Public Lighting</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card p-12 bg-bone reveal" style="transition-delay: 200ms;">
+                    <div class="w-16 h-16 bg-gold/10 flex items-center justify-center text-gold mb-8">
+                        <i class="fas fa-pencil-ruler text-3xl"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl text-black mb-4">Consultancy</h3>
+                    <p class="text-black/60 text-sm leading-relaxed mb-6">Quantity surveying, architectural services, and strategic project management consulting.</p>
+                    <ul class="text-[10px] font-bold uppercase tracking-widest text-gold space-y-2">
+                        <li>/ Architectural Strategy</li>
+                        <li>/ Quantity Surveying</li>
+                    </ul>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card p-12 bg-bone reveal">
+                    <div class="w-16 h-16 bg-gold/10 flex items-center justify-center text-gold mb-8">
+                        <i class="fas fa-tools text-3xl"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl text-black mb-4">Maintenance</h3>
+                    <p class="text-black/60 text-sm leading-relaxed mb-6">Renovations and structural maintenance for police stations, military bases, and schools.</p>
+                    <ul class="text-[10px] font-bold uppercase tracking-widest text-gold space-y-2">
+                        <li>/ Institutional Upkeep</li>
+                        <li>/ Structural Repairs</li>
+                    </ul>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card p-12 bg-bone reveal" style="transition-delay: 100ms;">
+                    <div class="w-16 h-16 bg-gold/10 flex items-center justify-center text-gold mb-8">
+                        <i class="fas fa-faucet text-3xl"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl text-black mb-4">Sanitation</h3>
+                    <p class="text-black/60 text-sm leading-relaxed mb-6">Professional plumbing, drainage solutions, and upgrade of ablution facilities in public sectors.</p>
+                    <ul class="text-[10px] font-bold uppercase tracking-widest text-gold space-y-2">
+                        <li>/ Plumbing Systems</li>
+                        <li>/ Ablution Facilities</li>
+                    </ul>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card p-12 bg-bone reveal" style="transition-delay: 200ms;">
+                    <div class="w-16 h-16 bg-gold/10 flex items-center justify-center text-gold mb-8">
+                        <i class="fas fa-layer-group text-3xl"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl text-black mb-4">Internal Finishes</h3>
+                    <p class="text-black/60 text-sm leading-relaxed mb-6">High-grade ceiling alterations, partitioning, tiling, skirting, and professional painting.</p>
+                    <ul class="text-[10px] font-bold uppercase tracking-widest text-gold space-y-2">
+                        <li>/ Alterations</li>
+                        <li>/ Partitioning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Gallery -->
+    <section id="portfolio" class="py-32 bg-black text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-24 reveal">
+                <div class="md:w-1/2">
+                    <span class="text-gold font-bold uppercase tracking-[0.5em] text-[10px] mb-4 block">Proven Track Record</span>
+                    <h2 class="font-serif text-5xl md:text-7xl leading-tight">Featured <br>Achievements.</h2>
+                </div>
+                <div class="md:w-1/3 pb-4">
+                    <p class="text-white/40 text-sm leading-relaxed uppercase tracking-widest">A gallery of verified structural completions for the Public Works and GDE.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10 border border-white/5">
+                <div class="bg-black p-16 reveal hover:bg-zinc-900 transition duration-500">
+                    <div class="flex justify-between items-center mb-8">
+                        <span class="text-xs font-bold uppercase tracking-widest text-gold">Energy Sector</span>
+                        <span class="text-white/20 font-serif italic text-2xl">01.</span>
+                    </div>
+                    <h4 class="font-serif text-3xl mb-4 text-gold">Eskom Solar Rollout</h4>
+                    <p class="text-white/60 text-sm leading-relaxed mb-8">Supply and installation of 2,000 solar geyser units across Protea Glen and community hubs.</p>
+                    <div class="flex items-center space-x-2 text-[10px] font-bold uppercase tracking-widest text-white/40">
+                        <i class="fas fa-map-marker-alt text-gold"></i>
+                        <span>Gauteng Region</span>
+                    </div>
+                </div>
+
+                <div class="bg-black p-16 reveal hover:bg-zinc-900 transition duration-500">
+                    <div class="flex justify-between items-center mb-8">
+                        <span class="text-xs font-bold uppercase tracking-widest text-gold">Defense Sector</span>
+                        <span class="text-white/20 font-serif italic text-2xl">02.</span>
+                    </div>
+                    <h4 class="font-serif text-3xl mb-4 text-gold">Regiment Kroger Base</h4>
+                    <p class="text-white/60 text-sm leading-relaxed mb-8">Full renovations and facility upgrades at the Regiment Kroger Military Base for the DPW.</p>
+                    <div class="flex items-center space-x-2 text-[10px] font-bold uppercase tracking-widest text-white/40">
+                        <i class="fas fa-map-marker-alt text-gold"></i>
+                        <span>National DPW</span>
+                    </div>
+                </div>
+
+                <div class="bg-black p-16 reveal hover:bg-zinc-900 transition duration-500">
+                    <div class="flex justify-between items-center mb-8">
+                        <span class="text-xs font-bold uppercase tracking-widest text-gold">Education Sector</span>
+                        <span class="text-white/20 font-serif italic text-2xl">03.</span>
+                    </div>
+                    <h4 class="font-serif text-3xl mb-4 text-gold">Orlando Smart Class Hub</h4>
+                    <p class="text-white/60 text-sm leading-relaxed mb-8">Renovations and modernization of Grade 12 classrooms into Smart learning environments.</p>
+                    <div class="flex items-center space-x-2 text-[10px] font-bold uppercase tracking-widest text-white/40">
+                        <i class="fas fa-map-marker-alt text-gold"></i>
+                        <span>Orlando, GDE</span>
+                    </div>
+                </div>
+
+                <div class="bg-black p-16 reveal hover:bg-zinc-900 transition duration-500">
+                    <div class="flex justify-between items-center mb-8">
+                        <span class="text-xs font-bold uppercase tracking-widest text-gold">Institutional Sector</span>
+                        <span class="text-white/20 font-serif italic text-2xl">04.</span>
+                    </div>
+                    <h4 class="font-serif text-3xl mb-4 text-gold">Vereeniging Police Station</h4>
+                    <p class="text-white/60 text-sm leading-relaxed mb-8">Construction of Ramps and sanitary facilities for people with disabilities for DPW.</p>
+                    <div class="flex items-center space-x-2 text-[10px] font-bold uppercase tracking-widest text-white/40">
+                        <i class="fas fa-map-marker-alt text-gold"></i>
+                        <span>Vereeniging, ZA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compliance & Governance -->
+    <section class="py-32 bg-bone">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+                <div class="reveal">
+                    <span class="text-gold font-bold text-xs uppercase tracking-[0.3em] mb-4 block">Institutional Integrity</span>
+                    <h2 class="font-serif text-5xl text-black mb-12">Governance & <br><span class="italic text-gold">Compliance.</span></h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                        <div class="p-8 bg-white border-t-2 border-gold shadow-sm">
+                            <p class="text-[9px] font-bold uppercase tracking-widest text-black/40 mb-2">CIDB Graded</p>
+                            <p class="font-serif text-2xl text-black font-bold">3GB & 3EB</p>
+                        </div>
+                        <div class="p-8 bg-white border-t-2 border-gold shadow-sm">
+                            <p class="text-[9px] font-bold uppercase tracking-widest text-black/40 mb-2">COIDA Registration</p>
+                            <p class="font-serif text-2xl text-black font-bold">990000342693</p>
+                        </div>
+                        <div class="p-8 bg-white border-t-2 border-gold shadow-sm">
+                            <p class="text-[9px] font-bold uppercase tracking-widest text-black/40 mb-2">Electrical License</p>
+                            <p class="font-serif text-2xl text-black font-bold italic">IE 33638</p>
+                        </div>
+                        <div class="p-8 bg-white border-t-2 border-gold shadow-sm">
+                            <p class="text-[9px] font-bold uppercase tracking-widest text-black/40 mb-2">Liability Insured</p>
+                            <p class="font-serif text-2xl text-black font-bold italic">MT959127</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <div class="p-16 bg-black text-white rounded-sm relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-gold/10 -translate-y-16 translate-x-16 rounded-full"></div>
+                        <h4 class="text-gold font-bold uppercase tracking-[0.4em] text-[10px] mb-12">Our Mission</h4>
+                        <p class="font-serif text-3xl italic leading-relaxed mb-12">
+                            "To maintain a high standard of quality and completion of projects on time and within budget while empowering previously disadvantaged individuals."
+                        </p>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-px bg-gold"></div>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-white/40">Midas Ndamase • Managing Director</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex flex-col lg:flex-row gap-24">
+                <div class="lg:w-1/2 reveal">
+                    <h2 class="font-serif text-6xl md:text-8xl text-black leading-tight mb-12 italic">Connect.</h2>
+                    <p class="text-black/60 text-lg mb-16 leading-relaxed max-w-sm font-light">
+                        For consultations, tenders, or architectural strategy inquiries, our headquarters is prepared to assist you.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                        <div>
+                            <p class="text-[9px] font-bold uppercase tracking-[0.5em] text-gold mb-6 italic">Primary Contacts</p>
+                            <p class="font-serif text-2xl text-black">076 596 0629</p>
+                            <p class="font-serif text-2xl text-black">082 062 6968</p>
+                        </div>
+                        <div>
+                            <p class="text-[9px] font-bold uppercase tracking-[0.5em] text-gold mb-6 italic">Electronic Transmission</p>
+                            <p class="font-serif text-2xl text-black break-all">xvnprojects@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 reveal">
+                    <div class="bg-bone p-12 md:p-16 rounded-sm border border-gold/10">
+                        <form class="space-y-10">
+                            <div class="border-b border-black/10 pb-4">
+                                <label class="text-[9px] font-bold uppercase tracking-widest text-black/40 mb-2 block">Project Principal / Organization</label>
+                                <input type="text" class="w-full bg-transparent outline-none py-2 font-serif text-2xl placeholder:text-black/10" placeholder="Name or Department">
+                            </div>
+                            <div class="border-b border-black/10 pb-4">
+                                <label class="text-[9px] font-bold uppercase tracking-widest text-black/40 mb-2 block">Area of Interest</label>
+                                <select class="w-full bg-transparent outline-none py-2 font-serif text-2xl text-black appearance-none cursor-pointer">
+                                    <option>General Construction</option>
+                                    <option>Solar Infrastructure</option>
+                                    <option>Renovations</option>
+                                    <option>Quantity Surveying</option>
+                                </select>
+                            </div>
+                            <div class="border-b border-black/10 pb-4">
+                                <label class="text-[9px] font-bold uppercase tracking-widest text-black/40 mb-2 block">Message Brief</label>
+                                <textarea rows="2" class="w-full bg-transparent outline-none py-2 font-serif text-2xl placeholder:text-black/10" placeholder="Outline your scope..."></textarea>
+                            </div>
+                            <button class="w-full bg-black text-white py-6 font-bold uppercase tracking-[0.4em] text-[10px] hover:bg-gold transition-all duration-500 shadow-xl shadow-black/10">Submit Inquiry</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-24 bg-white border-t border-black/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row justify-between items-center gap-16">
+            <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
+                <span class="font-serif italic text-3xl font-bold text-black">Xinyanyani Projects</span>
+                <span class="text-[9px] font-bold uppercase tracking-[0.5em] text-black/30 mt-2">Registration 2003/030616/23</span>
+            </div>
+            
+            <div class="flex space-x-16 text-[9px] font-bold uppercase tracking-[0.5em] text-black/40">
+                <a href="#about" class="hover:text-gold transition">Our Story</a>
+                <a href="#services" class="hover:text-gold transition">Expertise</a>
+                <a href="#portfolio" class="hover:text-gold transition">Archive</a>
+            </div>
+            
+            <div class="text-center lg:text-right">
+                <p class="text-[9px] font-bold uppercase tracking-[0.3em] text-black/20">Gauteng, South Africa &copy; 2024</p>
+                <p class="text-[9px] font-bold uppercase tracking-[0.3em] text-black/20 mt-1">Exceeding Expectations.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll reveal logic
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        reveal(); // Initial run
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const target = document.querySelector(targetId);
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
