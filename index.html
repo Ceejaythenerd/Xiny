@@ -3,481 +3,351 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xinyanyani Projects | The Gold Standard in Infrastructure</title>
+    <title>Xinyanyani Projects | Frameless Glass Specialists</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Montserrat:wght@300;400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
         
         :root {
-            --gold: #c5a059;
-            --black: #0a0a0a;
-            --dark-gray: #1a1a1a;
-            --bone: #f8f5f0;
+            --brand-yellow: #fbbf24; /* Signature Yellow */
+            --text-dark: #1a1a1a;
+            --bg-dark: #111111;
         }
 
         body { 
-            font-family: 'Montserrat', sans-serif; 
-            background-color: var(--bone);
-            color: var(--black);
-            scroll-behavior: smooth;
+            font-family: 'Open Sans', sans-serif; 
+            color: var(--text-dark);
+            background-color: #ffffff;
+            overflow-x: hidden;
         }
 
-        .font-serif { font-family: 'Cormorant Garamond', serif; }
+        .bg-brand-yellow { background-color: var(--brand-yellow); }
+        .text-brand-yellow { color: var(--brand-yellow); }
+        .border-brand-yellow { border-color: var(--brand-yellow); }
 
-        .bg-gold { background-color: var(--gold); }
-        .text-gold { color: var(--gold); }
-        .border-gold { border-color: var(--gold); }
-        .bg-black-custom { background-color: var(--black); }
-        .text-black-custom { color: var(--black); }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 1s cubic-bezier(0.2, 1, 0.3, 1);
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
+        /* Animated Motion Hero (Ken Burns Effect) */
+        @keyframes kenburns {
+            0% { transform: scale(1) translate(0, 0); }
+            50% { transform: scale(1.1) translate(-1%, -1%); }
+            100% { transform: scale(1) translate(0, 0); }
         }
 
-        .hero-gradient {
-            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
-                        url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
+        .hero-animation {
+            animation: kenburns 25s ease-in-out infinite;
         }
 
-        .gold-underline {
+        .hero-overlay {
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%);
+        }
+
+        /* Diagonal Cut similar to reference */
+        .diagonal-divider {
+            height: 100px;
+            background: #ffffff;
+            clip-path: polygon(0 100%, 100% 0, 100% 100%, 0% 100%);
+            margin-top: -100px;
             position: relative;
-        }
-        .gold-underline::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background-color: var(--gold);
-            transition: width 0.3s ease;
-        }
-        .gold-underline:hover::after {
-            width: 100%;
+            z-index: 10;
         }
 
         .service-card {
-            transition: all 0.5s ease;
-            border: 1px solid transparent;
+            background: #fcfcfc;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border: 1px solid #eee;
         }
         .service-card:hover {
-            border-color: var(--gold);
-            background: white;
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            border-color: var(--brand-yellow);
         }
 
-        .dark-section {
-            background-color: var(--black);
-            color: white;
+        .btn-outline-yellow {
+            border: 1px solid var(--brand-yellow);
+            color: var(--brand-yellow);
+            padding: 6px 20px;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+        .btn-outline-yellow:hover {
+            background: var(--brand-yellow);
+            color: #000;
+        }
+
+        .nav-link {
+            font-size: 13px;
+            font-weight: 600;
+            color: #444;
+            transition: color 0.3s;
+        }
+        .nav-link:hover { color: var(--brand-yellow); }
+
+        .banner-pattern {
+            background-image: radial-gradient(rgba(0,0,0,0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.3;
         }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Premium Navigation -->
-    <nav class="fixed w-full z-50 bg-white shadow-md border-b border-gold/10">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="flex justify-between h-24 items-center">
-                <div class="flex flex-col">
-                    <span class="font-serif text-3xl font-bold text-black leading-none tracking-tight">XINYANYANI</span>
-                    <span class="text-[9px] uppercase tracking-[0.4em] text-gold font-bold mt-1">Projects & Construction</span>
-                </div>
-                
-                <div class="hidden lg:flex space-x-12 items-center text-[10px] font-bold uppercase tracking-widest text-black/60">
-                    <a href="#about" class="hover:text-gold transition-colors">Our Legacy</a>
-                    <a href="#services" class="hover:text-gold transition-colors">Services</a>
-                    <a href="#portfolio" class="hover:text-gold transition-colors">Portfolio</a>
-                    <a href="#contact" class="bg-black text-white px-8 py-3 rounded-sm hover:bg-gold hover:text-white transition-all duration-300">Inquire Now</a>
-                </div>
-
-                <button class="lg:hidden text-black"><i class="fas fa-bars text-2xl"></i></button>
-            </div>
+    <!-- Top Bar -->
+    <div class="bg-black text-white py-2 px-6 md:px-12 flex justify-between items-center text-[10px] font-bold tracking-widest uppercase">
+        <div class="hidden md:flex items-center space-x-6">
+            <span><i class="fas fa-phone text-brand-yellow mr-2"></i> 076 596 0629 / 082 062 6968</span>
+            <span><i class="fas fa-envelope text-brand-yellow mr-2"></i> xvnprojects@gmail.com</span>
+            <span><i class="fas fa-shield-alt text-brand-yellow mr-2"></i> CIDB Graded: 3GB & 3EB</span>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="min-h-screen flex items-center pt-24 hero-gradient text-white relative">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 z-10">
-            <div class="lg:w-2/3">
-                <span class="text-gold font-bold uppercase tracking-[0.5em] text-xs mb-6 block">Celebrating 25 Years of Excellence</span>
-                <h1 class="font-serif text-6xl md:text-8xl lg:text-[7rem] leading-none mb-8">
-                    Architecting <br>
-                    <span class="italic font-light text-gold">Lasting Value.</span>
-                </h1>
-                <p class="text-lg md:text-xl text-white/70 max-w-xl mb-12 leading-relaxed font-light">
-                    From specialized solar engineering to landmark retail projects, Xinyanyani Projects bridges the gap between technical precision and community growth.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-6">
-                    <a href="#services" class="bg-gold text-white px-10 py-4 font-bold rounded-sm hover:bg-white hover:text-black transition shadow-lg shadow-gold/20">Our Services</a>
-                    <a href="#portfolio" class="border border-white/30 text-white px-10 py-4 font-bold rounded-sm hover:bg-gold hover:border-gold transition">View Portfolio</a>
-                </div>
-            </div>
-        </div>
-        <!-- Decorative Scroll element -->
-        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-40">
-            <span class="text-[9px] uppercase tracking-[0.3em] mb-4">Discover</span>
-            <div class="w-px h-16 bg-gold"></div>
-        </div>
-    </section>
-
-    <!-- Stats Ribbon -->
-    <div class="bg-white border-b border-gold/10">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-2 lg:grid-cols-4 py-12 gap-8">
-            <div class="text-center">
-                <p class="font-serif text-4xl text-black mb-1">1999</p>
-                <p class="text-[9px] uppercase tracking-widest text-gold font-bold">Founding Year</p>
-            </div>
-            <div class="text-center">
-                <p class="font-serif text-4xl text-black mb-1">3GB / 3EB</p>
-                <p class="text-[9px] uppercase tracking-widest text-gold font-bold">CIDB Grading</p>
-            </div>
-            <div class="text-center">
-                <p class="font-serif text-4xl text-black mb-1">2000+</p>
-                <p class="text-[9px] uppercase tracking-widest text-gold font-bold">Solar Installs</p>
-            </div>
-            <div class="text-center">
-                <p class="font-serif text-4xl text-black mb-1">25y</p>
-                <p class="text-[9px] uppercase tracking-widest text-gold font-bold">Industry Tenure</p>
-            </div>
+        <div class="flex space-x-6">
+            <span class="cursor-pointer hover:text-brand-yellow"><i class="fas fa-shopping-cart text-brand-yellow mr-1"></i> Cart</span>
+            <span class="cursor-pointer hover:text-brand-yellow"><i class="fas fa-user text-brand-yellow mr-1"></i> Account</span>
         </div>
     </div>
 
-    <!-- About Section -->
-    <section id="about" class="py-32 bg-[#fcfbf9]">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="flex flex-col lg:flex-row items-center gap-20">
-                <div class="lg:w-1/2 reveal">
-                    <div class="relative">
-                        <img src="picture.jpeg?auto=format&fit=crop&w=800&q=80" alt="Construction Management" class="rounded-sm shadow-2xl relative z-10 grayscale hover:grayscale-0 transition duration-1000">
-                        <div class="absolute -bottom-6 -right-6 w-full h-full border-2 border-gold/20 -z-0"></div>
-                    </div>
+    <!-- Main Header -->
+    <header class="bg-white py-5 px-6 md:px-12 sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center space-x-4">
+                <div class="w-11 h-11 bg-black rounded-sm flex items-center justify-center text-brand-yellow font-black text-2xl border-2 border-brand-yellow">X</div>
+                <div class="flex flex-col">
+                    <span class="text-2xl font-black tracking-tighter text-black leading-none uppercase">XINYANYANI</span>
+                    <span class="text-[9px] font-bold text-brand-yellow uppercase tracking-[0.3em] mt-1">Frameless Mater Piece</span>
                 </div>
-                <div class="lg:w-1/2 reveal">
-                    <span class="text-gold font-bold text-xs uppercase tracking-[0.3em] mb-4 block">The Managing Director</span>
-                    <h2 class="font-serif text-5xl text-black mb-8 leading-tight">Led by <br>Midas Ndamase</h2>
-                    <p class="text-black/60 text-lg leading-relaxed mb-8">
-                        With a foundation in Quantity Surveying from Manu Technical College and years of experience at Abba Space Structures, Midas Ndamase brings corporate-level precision to every project.
-                    </p>
-                    <p class="text-black/60 text-lg leading-relaxed mb-10">
-                        Having contributed to landmarks like the <span class="text-black font-bold italic">Southgate Mall</span> and <span class="text-black font-bold italic">East Rand Mall</span>, his vision for Xinyanyani Projects is built on fair pricing, uncompromising quality, and community empowerment.
-                    </p>
-                    <a href="#contact" class="text-black font-bold uppercase text-xs tracking-widest gold-underline">The History of Xinyanyani →</a>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="hidden lg:flex space-x-8 items-center uppercase tracking-tighter">
+                <a href="#home" class="nav-link text-brand-yellow">Home</a>
+                <a href="#about" class="nav-link">Legacy</a>
+                <a href="#services" class="nav-link">Products & Services</a>
+                <a href="#compliance" class="nav-link">Compliance</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#" class="ml-4 bg-brand-yellow text-black px-6 py-2.5 rounded-sm text-xs font-black hover:bg-black hover:text-brand-yellow transition duration-300">Request Quote</a>
+            </nav>
+
+            <button class="lg:hidden text-2xl text-black"><i class="fas fa-bars-staggered"></i></button>
+        </div>
+    </header>
+
+    <!-- Animated Motion Hero Section -->
+    <section id="home" class="relative h-[600px] overflow-hidden bg-black">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1920&q=80" 
+                 class="w-full h-full object-cover opacity-70 hero-animation" alt="Architectural Glass Installation">
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 h-full flex items-center relative z-10">
+            <div class="max-w-3xl text-white">
+                <div class="w-20 h-1 bg-brand-yellow mb-8"></div>
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+                    High-quality <span class="text-brand-yellow">frameless glass</span> solutions for residential and commercial properties
+                </h1>
+                <a href="#services" class="inline-block border-2 border-white text-white px-8 py-3 text-xs font-black uppercase tracking-widest hover:bg-brand-yellow hover:border-brand-yellow hover:text-black transition-all">
+                    Explore Our Products & Services &rarr;
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Introduction (From Company Profile) -->
+    <section id="about" class="py-24 bg-white relative z-20">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div>
+                <h2 class="text-brand-yellow text-3xl font-extrabold leading-tight mb-8">
+                    Welcome to our company, where we specialise in providing high-quality frameless glass solutions for both residential and commercial properties.
+                </h2>
+                <p class="text-black font-bold text-xl leading-relaxed">
+                    Our range of products includes frameless glass balustrades, luxury showers, glass doors, front facades, cellars, and stacking systems.
+                </p>
+            </div>
+            <div class="text-gray-600 text-base leading-relaxed space-y-6">
+                <p>Established in 1999 and headed by Midas Ndamase, Xinyanyani Projects is a Close Corporation with over 25 years of experience in structural delivery. We conceptualize strategies and genuine tools that empower our clientele through excellence.</p>
+                <p>Our frameless glass products are designed to enhance the aesthetics and functionality of any space, providing a sleek and modern look that seamlessly blends with the surrounding architectural environment.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industrial Icon Features (From Reference Style) -->
+    <section class="bg-[#4a4a4a] py-16">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center text-white">
+            <div class="flex flex-col items-center">
+                <i class="fas fa-award text-4xl text-brand-yellow mb-6"></i>
+                <p class="text-xs leading-relaxed max-w-xs">At our company, we are committed to providing our customers with exceptional service and High-quality products, maintaining a high standard of quality in every project.</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <i class="fas fa-users text-4xl text-brand-yellow mb-6"></i>
+                <p class="text-xs leading-relaxed max-w-xs">Our team of experienced professionals, led by Midas Ndamase, will work closely with you to understand your specific needs and design a customised structural solution.</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <i class="fas fa-layer-group text-4xl text-brand-yellow mb-6"></i>
+                <p class="text-xs leading-relaxed max-w-xs">From concept to final installation, we guide you through every step of the process, ensuring all projects are completed on time and within budget.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Yellow CTA Banner (Reference Layout) -->
+    <section class="bg-brand-yellow py-12 relative overflow-hidden">
+        <div class="absolute inset-0 banner-pattern"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10 text-center text-black">
+            <p class="text-sm font-semibold mb-2">Browse our website to explore our range of frameless glass products and contact us today to schedule a consultation with one of our experts.</p>
+            <p class="text-xl font-black mb-8 uppercase tracking-tight">Let us help you bring your vision to life with our stunning frameless glass solutions.</p>
+            <a href="#contact" class="inline-block border-2 border-black px-8 py-2 text-xs font-black uppercase tracking-widest hover:bg-black hover:text-brand-yellow transition">Contact Us &rarr;</a>
+        </div>
+    </section>
+
+    <!-- Products & Services Grid (Kept Current Services) -->
+    <section id="services" class="py-24 bg-[#f1f1f1]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-black text-black mb-4 uppercase">Our Products & Services</h2>
+                <div class="w-20 h-1.5 bg-brand-yellow mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Balustrades -->
+                <div class="service-card flex flex-col items-center">
+                    <img src="balustrade.jpeg?auto=forma&fit=crop&w=600&q=80" class="w-full h-52 object-cover mb-6 grayscale hover:grayscale-0 transition duration-500" alt="Balustrades">
+                    <h4 class="text-xs font-black text-gray-700 uppercase tracking-widest mb-6">Balustrades</h4>
+                    <a href="#" class="btn-outline-yellow mb-8">View</a>
+                </div>
+                <!-- Showers -->
+                <div class="service-card flex flex-col items-center">
+                    <img src="shower.jpeg?auto=format&fit=crop&w=600&q=80" class="w-full h-52 object-cover mb-6 grayscale hover:grayscale-0 transition duration-500" alt="Showers">
+                    <h4 class="text-xs font-black text-gray-700 uppercase tracking-widest mb-6">Showers & Shower Service</h4>
+                    <a href="#" class="btn-outline-yellow mb-8">View</a>
+                </div>
+                <!-- Enclosures -->
+                <div class="service-card flex flex-col items-center">
+                    <img src="office.jpeg?auto=format&fit=crop&w=600&q=80" class="w-full h-52 object-cover mb-6 grayscale hover:grayscale-0 transition duration-500" alt="Enclosures">
+                    <h4 class="text-xs font-black text-gray-700 uppercase tracking-widest mb-6">Frameless Enclosures</h4>
+                    <a href="#" class="btn-outline-yellow mb-8">View</a>
+                </div>
+                <!-- Patio -->
+                <div class="service-card flex flex-col items-center">
+                    <img src="patio.jpeg?auto=format&fit=crop&w=600&q=80" class="w-full h-52 object-cover mb-6 grayscale hover:grayscale-0 transition duration-500" alt="Patio Enclosures">
+                    <h4 class="text-xs font-black text-gray-700 uppercase tracking-widest mb-6">Patio Enclosures</h4>
+                    <a href="#" class="btn-outline-yellow mb-8">View</a>
+                </div>
+                <!-- Aluminium -->
+                <div class="service-card flex flex-col items-center">
+                    <img src="alum.jpeg?auto=format&fit=crop&w=600&q=80" class="w-full h-52 object-cover mb-6 grayscale hover:grayscale-0 transition duration-500" alt="Aluminium">
+                    <h4 class="text-xs font-black text-gray-700 uppercase tracking-widest mb-6">Aluminium Doors & Windows</h4>
+                    <a href="#" class="btn-outline-yellow mb-8">View</a>
+                </div>
+                <!-- Mirrors -->
+                <div class="service-card flex flex-col items-center">
+                    <img src="door.jpeg?auto=format&fit=crop&w=600&q=80" class="w-full h-52 object-cover mb-6 grayscale hover:grayscale-0 transition duration-500" alt="Mirrors">
+                    <h4 class="text-xs font-black text-gray-700 uppercase tracking-widest mb-6">Frameless Door</h4>
+                    <a href="#" class="btn-outline-yellow mb-8">View</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-32 bg-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="text-center mb-24 reveal">
-                <h2 class="font-serif text-5xl text-black mb-6">Our Core Disciplines</h2>
-                <div class="w-20 h-0.5 bg-gold mx-auto"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-                <!-- Service 1 -->
-                <div class="service-card p-12 bg-bone reveal">
-                    <div class="w-16 h-16 bg-gold/10 flex items-center justify-center text-gold mb-8">
-                        <i class="fas fa-building text-3xl"></i>
-                    </div>
-                    <h3 class="font-serif text-2xl text-black mb-4">Construction</h3>
-                    <p class="text-black/60 text-sm leading-relaxed mb-6">Turnkey general building works, from RDP residential housing to complex institutional facilities.</p>
-                    <ul class="text-[10px] font-bold uppercase tracking-widest text-gold space-y-2">
-                        <li>/ New Developments</li>
-                        <li>/ RDP Housing</li>
-                    </ul>
+    <!-- Governance & Compliance -->
+    <section id="compliance" class="py-16 bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h4 class="text-[10px] font-black uppercase tracking-[0.4em] text-gray-400 mb-8">Corporate Governance</h4>
+            <div class="flex flex-wrap justify-center gap-10 md:gap-20">
+                <div class="flex flex-col items-center">
+                    <span class="text-3xl font-black text-black">3GB / 3EB</span>
+                    <span class="text-[9px] font-bold text-gray-500 uppercase tracking-widest mt-2">CIDB Graded</span>
                 </div>
-
-                <!-- Service 2 -->
-                <div class="service-card p-12 bg-bone reveal" style="transition-delay: 100ms;">
-                    <div class="w-16 h-16 bg-gold/10 flex items-center justify-center text-gold mb-8">
-                        <i class="fas fa-solar-panel text-3xl"></i>
-                    </div>
-                    <h3 class="font-serif text-2xl text-black mb-4">Solar Engineering</h3>
-                    <p class="text-black/60 text-sm leading-relaxed mb-6">Specialized installation of over 2,000 solar geysers for Eskom and sustainable lighting solutions.</p>
-                    <ul class="text-[10px] font-bold uppercase tracking-widest text-gold space-y-2">
-                        <li>/ Solar Geyser Systems</li>
-                        <li>/ Public Lighting</li>
-                    </ul>
+                <div class="flex flex-col items-center">
+                    <span class="text-3xl font-black text-black">111388</span>
+                    <span class="text-[9px] font-bold text-gray-500 uppercase tracking-widest mt-2">CRS Reference</span>
                 </div>
-
-                <!-- Service 3 -->
-                <div class="service-card p-12 bg-bone reveal" style="transition-delay: 200ms;">
-                    <div class="w-16 h-16 bg-gold/10 flex items-center justify-center text-gold mb-8">
-                        <i class="fas fa-pencil-ruler text-3xl"></i>
-                    </div>
-                    <h3 class="font-serif text-2xl text-black mb-4">Consultancy</h3>
-                    <p class="text-black/60 text-sm leading-relaxed mb-6">Quantity surveying, architectural services, and strategic project management consulting.</p>
-                    <ul class="text-[10px] font-bold uppercase tracking-widest text-gold space-y-2">
-                        <li>/ Architectural Strategy</li>
-                        <li>/ Quantity Surveying</li>
-                    </ul>
+                <div class="flex flex-col items-center">
+                    <span class="text-3xl font-black text-black">COIDA</span>
+                    <span class="text-[9px] font-bold text-gray-500 uppercase tracking-widest mt-2">Registered</span>
                 </div>
-
-                <!-- Service 4 -->
-                <div class="service-card p-12 bg-bone reveal">
-                    <div class="w-16 h-16 bg-gold/10 flex items-center justify-center text-gold mb-8">
-                        <i class="fas fa-tools text-3xl"></i>
-                    </div>
-                    <h3 class="font-serif text-2xl text-black mb-4">Maintenance</h3>
-                    <p class="text-black/60 text-sm leading-relaxed mb-6">Renovations and structural maintenance for police stations, military bases, and schools.</p>
-                    <ul class="text-[10px] font-bold uppercase tracking-widest text-gold space-y-2">
-                        <li>/ Institutional Upkeep</li>
-                        <li>/ Structural Repairs</li>
-                    </ul>
-                </div>
-
-                <!-- Service 5 -->
-                <div class="service-card p-12 bg-bone reveal" style="transition-delay: 100ms;">
-                    <div class="w-16 h-16 bg-gold/10 flex items-center justify-center text-gold mb-8">
-                        <i class="fas fa-faucet text-3xl"></i>
-                    </div>
-                    <h3 class="font-serif text-2xl text-black mb-4">Sanitation</h3>
-                    <p class="text-black/60 text-sm leading-relaxed mb-6">Professional plumbing, drainage solutions, and upgrade of ablution facilities in public sectors.</p>
-                    <ul class="text-[10px] font-bold uppercase tracking-widest text-gold space-y-2">
-                        <li>/ Plumbing Systems</li>
-                        <li>/ Ablution Facilities</li>
-                    </ul>
-                </div>
-
-                <!-- Service 6 -->
-                <div class="service-card p-12 bg-bone reveal" style="transition-delay: 200ms;">
-                    <div class="w-16 h-16 bg-gold/10 flex items-center justify-center text-gold mb-8">
-                        <i class="fas fa-layer-group text-3xl"></i>
-                    </div>
-                    <h3 class="font-serif text-2xl text-black mb-4">Internal Finishes</h3>
-                    <p class="text-black/60 text-sm leading-relaxed mb-6">High-grade ceiling alterations, partitioning, tiling, skirting, and professional painting.</p>
-                    <ul class="text-[10px] font-bold uppercase tracking-widest text-gold space-y-2">
-                        <li>/ Alterations</li>
-                        <li>/ Partitioning</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Project Gallery -->
-    <section id="portfolio" class="py-32 bg-black text-white overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-24 reveal">
-                <div class="md:w-1/2">
-                    <span class="text-gold font-bold uppercase tracking-[0.5em] text-[10px] mb-4 block">Proven Track Record</span>
-                    <h2 class="font-serif text-5xl md:text-7xl leading-tight">Featured <br>Achievements.</h2>
-                </div>
-                <div class="md:w-1/3 pb-4">
-                    <p class="text-white/40 text-sm leading-relaxed uppercase tracking-widest">A gallery of verified structural completions for the Public Works and GDE.</p>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10 border border-white/5">
-                <div class="bg-black p-16 reveal hover:bg-zinc-900 transition duration-500">
-                    <div class="flex justify-between items-center mb-8">
-                        <span class="text-xs font-bold uppercase tracking-widest text-gold">Energy Sector</span>
-                        <span class="text-white/20 font-serif italic text-2xl">01.</span>
-                    </div>
-                    <h4 class="font-serif text-3xl mb-4 text-gold">Eskom Solar Rollout</h4>
-                    <p class="text-white/60 text-sm leading-relaxed mb-8">Supply and installation of 2,000 solar geyser units across Protea Glen and community hubs.</p>
-                    <div class="flex items-center space-x-2 text-[10px] font-bold uppercase tracking-widest text-white/40">
-                        <i class="fas fa-map-marker-alt text-gold"></i>
-                        <span>Gauteng Region</span>
-                    </div>
-                </div>
-
-                <div class="bg-black p-16 reveal hover:bg-zinc-900 transition duration-500">
-                    <div class="flex justify-between items-center mb-8">
-                        <span class="text-xs font-bold uppercase tracking-widest text-gold">Defense Sector</span>
-                        <span class="text-white/20 font-serif italic text-2xl">02.</span>
-                    </div>
-                    <h4 class="font-serif text-3xl mb-4 text-gold">Regiment Kroger Base</h4>
-                    <p class="text-white/60 text-sm leading-relaxed mb-8">Full renovations and facility upgrades at the Regiment Kroger Military Base for the DPW.</p>
-                    <div class="flex items-center space-x-2 text-[10px] font-bold uppercase tracking-widest text-white/40">
-                        <i class="fas fa-map-marker-alt text-gold"></i>
-                        <span>National DPW</span>
-                    </div>
-                </div>
-
-                <div class="bg-black p-16 reveal hover:bg-zinc-900 transition duration-500">
-                    <div class="flex justify-between items-center mb-8">
-                        <span class="text-xs font-bold uppercase tracking-widest text-gold">Education Sector</span>
-                        <span class="text-white/20 font-serif italic text-2xl">03.</span>
-                    </div>
-                    <h4 class="font-serif text-3xl mb-4 text-gold">Orlando Smart Class Hub</h4>
-                    <p class="text-white/60 text-sm leading-relaxed mb-8">Renovations and modernization of Grade 12 classrooms into Smart learning environments.</p>
-                    <div class="flex items-center space-x-2 text-[10px] font-bold uppercase tracking-widest text-white/40">
-                        <i class="fas fa-map-marker-alt text-gold"></i>
-                        <span>Orlando, GDE</span>
-                    </div>
-                </div>
-
-                <div class="bg-black p-16 reveal hover:bg-zinc-900 transition duration-500">
-                    <div class="flex justify-between items-center mb-8">
-                        <span class="text-xs font-bold uppercase tracking-widest text-gold">Institutional Sector</span>
-                        <span class="text-white/20 font-serif italic text-2xl">04.</span>
-                    </div>
-                    <h4 class="font-serif text-3xl mb-4 text-gold">Vereeniging Police Station</h4>
-                    <p class="text-white/60 text-sm leading-relaxed mb-8">Construction of Ramps and sanitary facilities for people with disabilities for DPW.</p>
-                    <div class="flex items-center space-x-2 text-[10px] font-bold uppercase tracking-widest text-white/40">
-                        <i class="fas fa-map-marker-alt text-gold"></i>
-                        <span>Vereeniging, ZA</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Compliance & Governance -->
-    <section class="py-32 bg-bone">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-                <div class="reveal">
-                    <span class="text-gold font-bold text-xs uppercase tracking-[0.3em] mb-4 block">Institutional Integrity</span>
-                    <h2 class="font-serif text-5xl text-black mb-12">Governance & <br><span class="italic text-gold">Compliance.</span></h2>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                        <div class="p-8 bg-white border-t-2 border-gold shadow-sm">
-                            <p class="text-[9px] font-bold uppercase tracking-widest text-black/40 mb-2">CIDB Graded</p>
-                            <p class="font-serif text-2xl text-black font-bold">3GB & 3EB</p>
-                        </div>
-                        <div class="p-8 bg-white border-t-2 border-gold shadow-sm">
-                            <p class="text-[9px] font-bold uppercase tracking-widest text-black/40 mb-2">COIDA Registration</p>
-                            <p class="font-serif text-2xl text-black font-bold">990000342693</p>
-                        </div>
-                        <div class="p-8 bg-white border-t-2 border-gold shadow-sm">
-                            <p class="text-[9px] font-bold uppercase tracking-widest text-black/40 mb-2">Electrical License</p>
-                            <p class="font-serif text-2xl text-black font-bold italic">IE 33638</p>
-                        </div>
-                        <div class="p-8 bg-white border-t-2 border-gold shadow-sm">
-                            <p class="text-[9px] font-bold uppercase tracking-widest text-black/40 mb-2">Liability Insured</p>
-                            <p class="font-serif text-2xl text-black font-bold italic">MT959127</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="reveal">
-                    <div class="p-16 bg-black text-white rounded-sm relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-32 h-32 bg-gold/10 -translate-y-16 translate-x-16 rounded-full"></div>
-                        <h4 class="text-gold font-bold uppercase tracking-[0.4em] text-[10px] mb-12">Our Mission</h4>
-                        <p class="font-serif text-3xl italic leading-relaxed mb-12">
-                            "To maintain a high standard of quality and completion of projects on time and within budget while empowering previously disadvantaged individuals."
-                        </p>
-                        <div class="flex items-center space-x-4">
-                            <div class="w-10 h-px bg-gold"></div>
-                            <span class="text-[10px] font-bold uppercase tracking-widest text-white/40">Midas Ndamase • Managing Director</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-32 bg-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="flex flex-col lg:flex-row gap-24">
-                <div class="lg:w-1/2 reveal">
-                    <h2 class="font-serif text-6xl md:text-8xl text-black leading-tight mb-12 italic">Connect.</h2>
-                    <p class="text-black/60 text-lg mb-16 leading-relaxed max-w-sm font-light">
-                        For consultations, tenders, or architectural strategy inquiries, our headquarters is prepared to assist you.
-                    </p>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
-                        <div>
-                            <p class="text-[9px] font-bold uppercase tracking-[0.5em] text-gold mb-6 italic">Primary Contacts</p>
-                            <p class="font-serif text-2xl text-black">076 596 0629</p>
-                            <p class="font-serif text-2xl text-black">082 062 6968</p>
-                        </div>
-                        <div>
-                            <p class="text-[9px] font-bold uppercase tracking-[0.5em] text-gold mb-6 italic">Electronic Transmission</p>
-                            <p class="font-serif text-2xl text-black break-all">xvnprojects@gmail.com</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="lg:w-1/2 reveal">
-                    <div class="bg-bone p-12 md:p-16 rounded-sm border border-gold/10">
-                        <form class="space-y-10">
-                            <div class="border-b border-black/10 pb-4">
-                                <label class="text-[9px] font-bold uppercase tracking-widest text-black/40 mb-2 block">Project Principal / Organization</label>
-                                <input type="text" class="w-full bg-transparent outline-none py-2 font-serif text-2xl placeholder:text-black/10" placeholder="Name or Department">
-                            </div>
-                            <div class="border-b border-black/10 pb-4">
-                                <label class="text-[9px] font-bold uppercase tracking-widest text-black/40 mb-2 block">Area of Interest</label>
-                                <select class="w-full bg-transparent outline-none py-2 font-serif text-2xl text-black appearance-none cursor-pointer">
-                                    <option>General Construction</option>
-                                    <option>Solar Infrastructure</option>
-                                    <option>Renovations</option>
-                                    <option>Quantity Surveying</option>
-                                </select>
-                            </div>
-                            <div class="border-b border-black/10 pb-4">
-                                <label class="text-[9px] font-bold uppercase tracking-widest text-black/40 mb-2 block">Message Brief</label>
-                                <textarea rows="2" class="w-full bg-transparent outline-none py-2 font-serif text-2xl placeholder:text-black/10" placeholder="Outline your scope..."></textarea>
-                            </div>
-                            <button class="w-full bg-black text-white py-6 font-bold uppercase tracking-[0.4em] text-[10px] hover:bg-gold transition-all duration-500 shadow-xl shadow-black/10">Submit Inquiry</button>
-                        </form>
-                    </div>
+                <div class="flex flex-col items-center">
+                    <span class="text-3xl font-black text-black">SHE</span>
+                    <span class="text-[9px] font-bold text-gray-500 uppercase tracking-widest mt-2">Policy Compliant</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-24 bg-white border-t border-black/5">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row justify-between items-center gap-16">
-            <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
-                <span class="font-serif italic text-3xl font-bold text-black">Xinyanyani Projects</span>
-                <span class="text-[9px] font-bold uppercase tracking-[0.5em] text-black/30 mt-2">Registration 2003/030616/23</span>
+    <footer id="contact" class="bg-[#1a1a1a] text-white pt-24 pb-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
+                <!-- Brand Info -->
+                <div class="col-span-1">
+                    <div class="flex items-center space-x-3 mb-8">
+                        <div class="w-10 h-10 bg-brand-yellow flex items-center justify-center text-black font-black text-xl">X</div>
+                        <span class="text-xl font-black tracking-tighter uppercase">XINYANYANI</span>
+                    </div>
+                    <h4 class="font-bold text-brand-yellow italic text-2xl mb-6">Famous for Frameless</h4>
+                    <p class="text-xs leading-relaxed text-gray-400">Specialist in providing High-quality frameless glass and aluminium solutions for both residential and commercial properties since 1999.</p>
+                </div>
+                <!-- Services -->
+                <div>
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-brand-yellow mb-8">Solutions</h4>
+                    <ul class="text-[11px] space-y-4 text-gray-400 font-bold uppercase tracking-wider">
+                        <li><a href="#" class="hover:text-white transition">Balustrades</a></li>
+                        <li><a href="#" class="hover:text-white transition">Frameless Showers</a></li>
+                        <li><a href="#" class="hover:text-white transition">Patio Enclosures</a></li>
+                        <li><a href="#" class="hover:text-white transition">Aluminium Systems</a></li>
+                    </ul>
+                </div>
+                <!-- Values -->
+                <div>
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-brand-yellow mb-8">Our Values</h4>
+                    <ul class="text-[11px] space-y-4 text-gray-400 font-bold uppercase tracking-wider">
+                        <li>Professionalism</li>
+                        <li>Dedication</li>
+                        <li>Integrity</li>
+                        <li>Empowerment</li>
+                    </ul>
+                </div>
+                <!-- Contact Us -->
+                <div>
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-brand-yellow mb-8">Direct Connect</h4>
+                    <ul class="text-[11px] space-y-6 text-gray-400 font-bold uppercase tracking-wider">
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-phone-alt text-brand-yellow mt-1"></i>
+                            <span>076 596 0629 / 082 062 6968</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-envelope text-brand-yellow mt-1"></i>
+                            <span class="break-all">xvnprojects@gmail.com</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-map-marker-alt text-brand-yellow mt-1"></i>
+                            <span>Gauteng Region, South Africa</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            
-            <div class="flex space-x-16 text-[9px] font-bold uppercase tracking-[0.5em] text-black/40">
-                <a href="#about" class="hover:text-gold transition">Our Story</a>
-                <a href="#services" class="hover:text-gold transition">Expertise</a>
-                <a href="#portfolio" class="hover:text-gold transition">Archive</a>
-            </div>
-            
-            <div class="text-center lg:text-right">
-                <p class="text-[9px] font-bold uppercase tracking-[0.3em] text-black/20">Gauteng, South Africa &copy; 2026</p>
-                <p class="text-[9px] font-bold uppercase tracking-[0.3em] text-black/20 mt-1">Exceeding Expectations.</p>
+
+            <!-- Social & Copyright -->
+            <div class="pt-10 border-t border-zinc-800 flex flex-col md:flex-row justify-between items-center text-[9px] font-black uppercase tracking-[0.5em] text-gray-600">
+                <p>&copy; 2026 Xinyanyani Projects CC. All Rights Reserved.</p>
+                <div class="flex space-x-6 mt-6 md:mt-0">
+                    <a href="#" class="hover:text-brand-yellow transition"><i class="fab fa-linkedin-in text-lg"></i></a>
+                    <a href="#" class="hover:text-brand-yellow transition"><i class="fab fa-facebook-f text-lg"></i></a>
+                    <a href="#" class="hover:text-brand-yellow transition"><i class="fab fa-whatsapp text-lg"></i></a>
+                </div>
             </div>
         </div>
     </footer>
 
     <script>
-        // Scroll reveal logic
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
-            }
-        }
-
-        window.addEventListener("scroll", reveal);
-        reveal(); // Initial run
-
-        // Smooth scroll
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                const target = document.querySelector(targetId);
+                const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     window.scrollTo({
-                        top: target.offsetTop - 100,
+                        top: target.offsetTop - 80,
                         behavior: 'smooth'
                     });
                 }
