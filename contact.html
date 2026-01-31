@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Xinyanyani Projects</title>
+    <meta name="description"
+        content="Contact Xinyanyani Projects for frameless glass solutions in Gauteng. Get a free quote today.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+        :root {
+            --brand-yellow: #fbbf24;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .bg-brand-yellow {
+            background-color: var(--brand-yellow);
+        }
+
+        .text-brand-yellow {
+            color: var(--brand-yellow);
+        }
+
+        .nav-link {
+            font-size: 13px;
+            font-weight: 600;
+            color: #444;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--brand-yellow);
+        }
+
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        .mobile-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+
+        .mobile-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Smart Form Styles */
+        .form-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid #e5e5e5;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--brand-yellow);
+            box-shadow: 0 0 0 4px rgba(251, 191, 36, 0.1);
+        }
+
+        .form-input:focus+.form-label,
+        .form-input:not(:placeholder-shown)+.form-label {
+            transform: translateY(-28px) scale(0.85);
+            color: var(--brand-yellow);
+            background: white;
+            padding: 0 8px;
+        }
+
+        .form-label {
+            position: absolute;
+            left: 16px;
+            top: 16px;
+            color: #888;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        /* Glassmorphism Contact Cards */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            transition: all 0.4s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            border-color: var(--brand-yellow);
+        }
+
+        /* Icon Circle with Pulse */
+        .icon-circle {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--brand-yellow) 0%, #f59e0b 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .icon-circle::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            border: 2px solid var(--brand-yellow);
+            opacity: 0.3;
+            animation: pulse 2s ease-out infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+
+            100% {
+                transform: scale(1.3);
+                opacity: 0;
+            }
+        }
+
+        /* Hero Section */
+        .hero-gradient {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-gradient::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(251, 191, 36, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        /* Form Container */
+        .form-container {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.15);
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--brand-yellow), #f59e0b, var(--brand-yellow));
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            background: linear-gradient(135deg, var(--brand-yellow) 0%, #f59e0b 100%);
+            color: black;
+            padding: 18px 40px;
+            border-radius: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .submit-btn:hover::before {
+            left: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(251, 191, 36, 0.4);
+        }
+
+        /* Map Container */
+        .map-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Social Icons */
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            background: #1a1a1a;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--brand-yellow);
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: var(--brand-yellow);
+            color: black;
+            transform: translateY(-4px) rotate(5deg);
+        }
+
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Quick Action Cards */
+        .quick-action {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .quick-action:hover {
+            border-color: var(--brand-yellow);
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+    <div
+        class="bg-black text-white py-2 px-6 md:px-12 flex justify-center md:justify-start items-center text-[10px] font-bold tracking-widest uppercase">
+        <div class="flex items-center space-x-4 md:space-x-6">
+            <a href="tel:0765960629" class="hover:text-brand-yellow transition"><i
+                    class="fas fa-phone text-brand-yellow mr-2"></i><span class="hidden sm:inline">076 596
+                    0629</span></a>
+            <a href="mailto:xvnprojects@gmail.com" class="hover:text-brand-yellow transition"><i
+                    class="fas fa-envelope text-brand-yellow mr-2"></i><span
+                    class="hidden md:inline">xvnprojects@gmail.com</span></a>
+        </div>
+    </div>
+
+    <header class="bg-white py-5 px-6 md:px-12 sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-4">
+                <div
+                    class="w-11 h-11 bg-black rounded-sm flex items-center justify-center text-brand-yellow font-black text-2xl border-2 border-brand-yellow">
+                    X</div>
+                <div class="flex flex-col">
+                    <span
+                        class="text-2xl font-black tracking-tighter text-black leading-none uppercase">XINYANYANI</span>
+                    <span class="text-[9px] font-bold text-brand-yellow uppercase tracking-[0.3em] mt-1">Frameless
+                        Master Piece</span>
+                </div>
+            </a>
+            <nav class="hidden lg:flex space-x-8 items-center uppercase tracking-tighter">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="contact.html" class="nav-link text-brand-yellow">Contact</a>
+                <a href="contact.html"
+                    class="ml-4 bg-brand-yellow text-black px-6 py-2.5 rounded-sm text-xs font-black hover:bg-black hover:text-brand-yellow transition">Request
+                    Quote</a>
+            </nav>
+            <button id="mobileMenuBtn" class="lg:hidden text-2xl text-black"><i
+                    class="fas fa-bars-staggered"></i></button>
+        </div>
+    </header>
+
+    <!-- Smart Hero Section -->
+    <section class="hero-gradient py-24">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center">
+                <div class="w-20 h-1.5 bg-brand-yellow mx-auto mb-8"></div>
+                <h1 class="text-4xl md:text-6xl font-black text-white mb-6">Let's Build <span
+                        class="text-brand-yellow">Together</span></h1>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-10">Get in touch for a free consultation and let us
+                    transform your space with premium frameless glass solutions</p>
+
+                <!-- Quick Action Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto mt-12">
+                    <a href="tel:0765960629" class="quick-action group">
+                        <i class="fas fa-phone text-brand-yellow text-2xl mb-3 group-hover:scale-110 transition"></i>
+                        <p class="text-white font-bold">Call Us Now</p>
+                        <p class="text-gray-500 text-sm">076 596 0629</p>
+                    </a>
+                    <a href="https://wa.me/27765960629" target="_blank" class="quick-action group">
+                        <i class="fab fa-whatsapp text-green-500 text-2xl mb-3 group-hover:scale-110 transition"></i>
+                        <p class="text-white font-bold">WhatsApp</p>
+                        <p class="text-gray-500 text-sm">Quick Response</p>
+                    </a>
+                    <a href="mailto:xvnprojects@gmail.com" class="quick-action group">
+                        <i class="fas fa-envelope text-brand-yellow text-2xl mb-3 group-hover:scale-110 transition"></i>
+                        <p class="text-white font-bold">Email Us</p>
+                        <p class="text-gray-500 text-sm">xvnprojects@gmail.com</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Contact Section -->
+    <section class="py-24 bg-[#f8f8f8]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Contact Form -->
+                <div class="form-container reveal">
+                    <h2 class="text-2xl font-black text-black mb-2 uppercase">Request a Quote</h2>
+                    <p class="text-gray-500 mb-8">Fill out the form and we'll get back to you within 24 hours</p>
+
+                    <form id="contactForm" class="space-y-5">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div class="form-group">
+                                <input type="text" name="name" required class="form-input" placeholder=" ">
+                                <label class="form-label">Full Name *</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" name="phone" required class="form-input" placeholder=" ">
+                                <label class="form-label">Phone Number *</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" required class="form-input" placeholder=" ">
+                            <label class="form-label">Email Address *</label>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase mb-2 text-gray-600">Service Required</label>
+                            <select name="service" class="form-input">
+                                <option value="">Select a service</option>
+                                <option value="balustrades">Frameless Balustrades</option>
+                                <option value="showers">Frameless Showers</option>
+                                <option value="enclosures">Frameless Enclosures</option>
+                                <option value="patio">Patio Enclosures</option>
+                                <option value="aluminium">Aluminium Doors & Windows</option>
+                                <option value="doors">Frameless Doors</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" rows="4" class="form-input" placeholder=" "></textarea>
+                            <label class="form-label">Tell us about your project...</label>
+                        </div>
+                        <button type="submit" class="w-full submit-btn">
+                            <i class="fas fa-paper-plane mr-2"></i> Send Message
+                        </button>
+                    </form>
+                    <p id="formSuccess"
+                        class="hidden mt-4 p-4 bg-green-100 text-green-800 rounded-lg text-sm font-bold">
+                        <i class="fas fa-check-circle mr-2"></i> Thank you! Your message has been sent. We'll contact
+                        you soon.
+                    </p>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h2 class="text-2xl font-black text-black mb-2 uppercase">Get in Touch</h2>
+                    <p class="text-gray-500 mb-8">We're here to help with all your glass needs</p>
+
+                    <div class="space-y-5">
+                        <div class="glass-card reveal">
+                            <div class="flex items-center space-x-5">
+                                <div class="icon-circle">
+                                    <i class="fas fa-phone text-2xl text-black"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-black text-black uppercase text-sm mb-1">Phone</h3>
+                                    <a href="tel:0765960629"
+                                        class="text-gray-600 hover:text-brand-yellow transition block">076 596 0629</a>
+                                    <a href="tel:0820626968"
+                                        class="text-gray-600 hover:text-brand-yellow transition block">082 062 6968</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass-card reveal">
+                            <div class="flex items-center space-x-5">
+                                <div class="icon-circle">
+                                    <i class="fas fa-envelope text-2xl text-black"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-black text-black uppercase text-sm mb-1">Email</h3>
+                                    <a href="mailto:xvnprojects@gmail.com"
+                                        class="text-gray-600 hover:text-brand-yellow transition">xvnprojects@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass-card reveal">
+                            <div class="flex items-center space-x-5">
+                                <div class="icon-circle">
+                                    <i class="fas fa-map-marker-alt text-2xl text-black"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-black text-black uppercase text-sm mb-1">Location</h3>
+                                    <p class="text-gray-600">Gauteng Region, South Africa</p>
+                                    <p class="text-gray-500 text-sm">Serving Johannesburg, Pretoria & surrounds</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass-card reveal">
+                            <div class="flex items-center space-x-5">
+                                <div class="icon-circle">
+                                    <i class="fas fa-clock text-2xl text-black"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-black text-black uppercase text-sm mb-1">Business Hours</h3>
+                                    <p class="text-gray-600">Mon - Fri: 8:00 AM - 5:00 PM</p>
+                                    <p class="text-gray-600">Sat: 8:00 AM - 1:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-10">
+                        <h3 class="font-black text-black uppercase text-sm mb-4">Connect With Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="https://www.facebook.com/" target="_blank" class="social-icon">
+                                <i class="fab fa-facebook-f text-xl"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/" target="_blank" class="social-icon">
+                                <i class="fab fa-linkedin-in text-xl"></i>
+                            </a>
+                            <a href="https://wa.me/27765960629" target="_blank" class="social-icon">
+                                <i class="fab fa-whatsapp text-xl"></i>
+                            </a>
+                            <a href="https://www.instagram.com/" target="_blank" class="social-icon">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-brand-yellow py-16">
+        <div class="max-w-7xl mx-auto px-6 text-center text-black">
+            <h2 class="text-2xl font-black mb-4 uppercase">25+ Years of Excellence</h2>
+            <p class="text-sm mb-2">CIDB Graded: 3GB & 3EB | CRS Reference: 111388 | COIDA Registered</p>
+        </div>
+    </section>
+
+    <footer class="bg-[#1a1a1a] text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div
+                            class="w-10 h-10 bg-brand-yellow flex items-center justify-center text-black font-black text-xl">
+                            X</div><span class="text-xl font-black uppercase">XINYANYANI</span>
+                    </div>
+                    <p class="text-xs text-gray-400">Frameless glass specialists since 1999.</p>
+                </div>
+                <div>
+                    <h4 class="text-[10px] font-black uppercase text-brand-yellow mb-6">Links</h4>
+                    <ul class="text-[11px] space-y-3 text-gray-400 font-bold uppercase">
+                        <li><a href="index.html" class="hover:text-white">Home</a></li>
+                        <li><a href="about.html" class="hover:text-white">About</a></li>
+                        <li><a href="services.html" class="hover:text-white">Services</a></li>
+                        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-[10px] font-black uppercase text-brand-yellow mb-6">Services</h4>
+                    <ul class="text-[11px] space-y-3 text-gray-400 font-bold uppercase">
+                        <li>Balustrades</li>
+                        <li>Showers</li>
+                        <li>Patios</li>
+                        <li>Aluminium</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-[10px] font-black uppercase text-brand-yellow mb-6">Contact</h4>
+                    <ul class="text-[11px] space-y-4 text-gray-400 font-bold">
+                        <li><i class="fas fa-phone-alt text-brand-yellow mr-2"></i>076 596 0629</li>
+                        <li><i class="fas fa-envelope text-brand-yellow mr-2"></i>xvnprojects@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-zinc-800 text-center text-[9px] text-gray-600">&copy; 2026 Xinyanyani
+                Projects CC</div>
+        </div>
+    </footer>
+
+    <div id="mobileOverlay" class="mobile-overlay fixed inset-0 bg-black/50 z-[60]"></div>
+    <nav id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-72 bg-white z-[70] shadow-2xl">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-10"><span
+                    class="text-xl font-black uppercase">Menu</span><button id="mobileMenuClose" class="text-2xl"><i
+                        class="fas fa-times"></i></button></div>
+            <ul class="space-y-6 text-sm font-bold uppercase">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html" class="text-brand-yellow">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn'), mobileMenuClose = document.getElementById('mobileMenuClose'), mobileMenu = document.getElementById('mobileMenu'), mobileOverlay = document.getElementById('mobileOverlay');
+        function openMenu() { mobileMenu.classList.add('active'); mobileOverlay.classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function closeMenu() { mobileMenu.classList.remove('active'); mobileOverlay.classList.remove('active'); document.body.style.overflow = ''; }
+        mobileMenuBtn.addEventListener('click', openMenu); mobileMenuClose.addEventListener('click', closeMenu); mobileOverlay.addEventListener('click', closeMenu);
+
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            document.getElementById('formSuccess').classList.remove('hidden');
+            this.reset();
+            setTimeout(() => document.getElementById('formSuccess').classList.add('hidden'), 5000);
+        });
+
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal');
+        function checkReveal() {
+            revealElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (elementTop < windowHeight - 100) {
+                    el.classList.add('active');
+                }
+            });
+        }
+        window.addEventListener('scroll', checkReveal);
+        checkReveal();
+    </script>
+</body>
+
+</html>

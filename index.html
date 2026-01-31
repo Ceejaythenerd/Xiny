@@ -1,36 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xinyanyani Projects | Frameless Glass Specialists</title>
+    <title>Xinyanyani Projects | Frameless Glass Specialists in Gauteng</title>
+    <meta name="description"
+        content="Xinyanyani Projects - Over 25 years of excellence in frameless glass solutions. Specialists in balustrades, showers, enclosures, and aluminium systems for residential and commercial properties in Gauteng, South Africa.">
+    <meta name="keywords"
+        content="frameless glass, balustrades, glass showers, patio enclosures, aluminium doors, aluminium windows, Gauteng, South Africa">
+    <meta name="author" content="Xinyanyani Projects CC">
+    <meta property="og:title" content="Xinyanyani Projects | Frameless Glass Specialists">
+    <meta property="og:description"
+        content="High-quality frameless glass solutions for residential and commercial properties. Over 25 years of excellence.">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://xinyanyani.co.za/">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
-        
+
         :root {
-            --brand-yellow: #fbbf24; /* Signature Yellow */
+            --brand-yellow: #fbbf24;
+            /* Signature Yellow */
             --text-dark: #1a1a1a;
             --bg-dark: #111111;
         }
 
-        body { 
-            font-family: 'Open Sans', sans-serif; 
+        body {
+            font-family: 'Open Sans', sans-serif;
             color: var(--text-dark);
             background-color: #ffffff;
             overflow-x: hidden;
         }
 
-        .bg-brand-yellow { background-color: var(--brand-yellow); }
-        .text-brand-yellow { color: var(--brand-yellow); }
-        .border-brand-yellow { border-color: var(--brand-yellow); }
+        .bg-brand-yellow {
+            background-color: var(--brand-yellow);
+        }
+
+        .text-brand-yellow {
+            color: var(--brand-yellow);
+        }
+
+        .border-brand-yellow {
+            border-color: var(--brand-yellow);
+        }
 
         /* Animated Motion Hero (Ken Burns Effect) */
         @keyframes kenburns {
-            0% { transform: scale(1) translate(0, 0); }
-            50% { transform: scale(1.1) translate(-1%, -1%); }
-            100% { transform: scale(1) translate(0, 0); }
+            0% {
+                transform: scale(1) translate(0, 0);
+            }
+
+            50% {
+                transform: scale(1.1) translate(-1%, -1%);
+            }
+
+            100% {
+                transform: scale(1) translate(0, 0);
+            }
         }
 
         .hero-animation {
@@ -41,14 +69,25 @@
             background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%);
         }
 
-        /* Diagonal Cut similar to reference */
-        .diagonal-divider {
-            height: 100px;
-            background: #ffffff;
-            clip-path: polygon(0 100%, 100% 0, 100% 100%, 0% 100%);
-            margin-top: -100px;
-            position: relative;
-            z-index: 10;
+        /* Mobile Menu Styles */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        .mobile-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .mobile-overlay.active {
+            opacity: 1;
+            visibility: visible;
         }
 
         .service-card {
@@ -56,9 +95,10 @@
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             border: 1px solid #eee;
         }
+
         .service-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
             border-color: var(--brand-yellow);
         }
 
@@ -72,6 +112,7 @@
             letter-spacing: 1px;
             transition: all 0.3s;
         }
+
         .btn-outline-yellow:hover {
             background: var(--brand-yellow);
             color: #000;
@@ -83,27 +124,198 @@
             color: #444;
             transition: color 0.3s;
         }
-        .nav-link:hover { color: var(--brand-yellow); }
+
+        .nav-link:hover {
+            color: var(--brand-yellow);
+        }
 
         .banner-pattern {
-            background-image: radial-gradient(rgba(0,0,0,0.1) 1px, transparent 1px);
+            background-image: radial-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
             background-size: 20px 20px;
             opacity: 0.3;
         }
+
+        /* Stats Counter */
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--brand-yellow);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: #888;
+            margin-top: 0.75rem;
+        }
+
+        /* Why Choose Us */
+        .feature-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 0.5rem;
+            transition: all 0.4s ease;
+            border: 1px solid #eee;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: var(--brand-yellow);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--brand-yellow) 0%, #f59e0b 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-icon i {
+            font-size: 1.5rem;
+            color: black;
+        }
+
+        /* Testimonials */
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 4rem;
+            color: var(--brand-yellow);
+            opacity: 0.3;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        /* Process Steps */
+        .process-step {
+            position: relative;
+            text-align: center;
+        }
+
+        .process-number {
+            width: 60px;
+            height: 60px;
+            background: var(--brand-yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: black;
+            margin: 0 auto 1rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .process-line {
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            width: 100%;
+            height: 3px;
+            background: #ddd;
+            z-index: 5;
+        }
+
+        .process-step:last-child .process-line {
+            display: none;
+        }
+
+        /* Home Carousel */
+        .home-carousel {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+        }
+
+        .home-carousel-track {
+            display: flex;
+            transition: transform 0.6s ease;
+        }
+
+        .home-carousel-slide {
+            min-width: 33.333%;
+            padding: 0.5rem;
+        }
+
+        .home-carousel-slide img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            transition: transform 0.4s ease;
+        }
+
+        .home-carousel-slide:hover img {
+            transform: scale(1.03);
+        }
+
+        @media (max-width: 768px) {
+            .home-carousel-slide {
+                min-width: 100%;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .process-line {
+                display: none;
+            }
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
+
 <body class="antialiased">
 
     <!-- Top Bar -->
-    <div class="bg-black text-white py-2 px-6 md:px-12 flex justify-between items-center text-[10px] font-bold tracking-widest uppercase">
-        <div class="hidden md:flex items-center space-x-6">
-            <span><i class="fas fa-phone text-brand-yellow mr-2"></i> 076 596 0629 / 082 062 6968</span>
-            <span><i class="fas fa-envelope text-brand-yellow mr-2"></i> xvnprojects@gmail.com</span>
-            <span><i class="fas fa-shield-alt text-brand-yellow mr-2"></i> CIDB Graded: 3GB & 3EB</span>
-        </div>
-        <div class="flex space-x-6">
-            <span class="cursor-pointer hover:text-brand-yellow"><i class="fas fa-shopping-cart text-brand-yellow mr-1"></i> Cart</span>
-            <span class="cursor-pointer hover:text-brand-yellow"><i class="fas fa-user text-brand-yellow mr-1"></i> Account</span>
+    <div
+        class="bg-black text-white py-2 px-6 md:px-12 flex justify-center md:justify-start items-center text-[10px] font-bold tracking-widest uppercase">
+        <div class="flex items-center space-x-4 md:space-x-6">
+            <a href="tel:0765960629" class="hover:text-brand-yellow transition"><i
+                    class="fas fa-phone text-brand-yellow mr-2"></i><span class="hidden sm:inline">076 596
+                    0629</span></a>
+            <a href="mailto:xvnprojects@gmail.com" class="hover:text-brand-yellow transition"><i
+                    class="fas fa-envelope text-brand-yellow mr-2"></i><span
+                    class="hidden md:inline">xvnprojects@gmail.com</span></a>
+            <span class="hidden lg:inline"><i class="fas fa-shield-alt text-brand-yellow mr-2"></i> CIDB Graded: 3GB &
+                3EB</span>
         </div>
     </div>
 
@@ -112,42 +324,50 @@
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <!-- Logo -->
             <div class="flex items-center space-x-4">
-                <div class="w-11 h-11 bg-black rounded-sm flex items-center justify-center text-brand-yellow font-black text-2xl border-2 border-brand-yellow">X</div>
+                <div
+                    class="w-11 h-11 bg-black rounded-sm flex items-center justify-center text-brand-yellow font-black text-2xl border-2 border-brand-yellow">
+                    X</div>
                 <div class="flex flex-col">
-                    <span class="text-2xl font-black tracking-tighter text-black leading-none uppercase">XINYANYANI</span>
-                    <span class="text-[9px] font-bold text-brand-yellow uppercase tracking-[0.3em] mt-1">Frameless Mater Piece</span>
+                    <span
+                        class="text-2xl font-black tracking-tighter text-black leading-none uppercase">XINYANYANI</span>
+                    <span class="text-[9px] font-bold text-brand-yellow uppercase tracking-[0.3em] mt-1">Frameless
+                        Master Piece</span>
                 </div>
             </div>
 
             <!-- Navigation -->
             <nav class="hidden lg:flex space-x-8 items-center uppercase tracking-tighter">
-                <a href="#home" class="nav-link text-brand-yellow">Home</a>
-                <a href="#about" class="nav-link">Legacy</a>
-                <a href="#services" class="nav-link">Products & Services</a>
-                <a href="#compliance" class="nav-link">Compliance</a>
-                <a href="#contact" class="nav-link">Contact</a>
-                <a href="#" class="ml-4 bg-brand-yellow text-black px-6 py-2.5 rounded-sm text-xs font-black hover:bg-black hover:text-brand-yellow transition duration-300">Request Quote</a>
+                <a href="index.html" class="nav-link text-brand-yellow">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="contact.html"
+                    class="ml-4 bg-brand-yellow text-black px-6 py-2.5 rounded-sm text-xs font-black hover:bg-black hover:text-brand-yellow transition duration-300">Request
+                    Quote</a>
             </nav>
 
-            <button class="lg:hidden text-2xl text-black"><i class="fas fa-bars-staggered"></i></button>
+            <button id="mobileMenuBtn" class="lg:hidden text-2xl text-black" aria-label="Open menu"><i
+                    class="fas fa-bars-staggered"></i></button>
         </div>
     </header>
 
     <!-- Animated Motion Hero Section -->
     <section id="home" class="relative h-[600px] overflow-hidden bg-black">
         <div class="absolute inset-0">
-            <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1920&q=80" 
-                 class="w-full h-full object-cover opacity-70 hero-animation" alt="Architectural Glass Installation">
+            <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1920&q=80"
+                class="w-full h-full object-cover opacity-70 hero-animation" alt="Architectural Glass Installation">
             <div class="absolute inset-0 hero-overlay"></div>
         </div>
-        
+
         <div class="max-w-7xl mx-auto px-6 h-full flex items-center relative z-10">
             <div class="max-w-3xl text-white">
                 <div class="w-20 h-1 bg-brand-yellow mb-8"></div>
                 <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
-                    High-quality <span class="text-brand-yellow">frameless glass</span> solutions for residential and commercial properties
+                    High-quality <span class="text-brand-yellow">frameless glass</span> solutions for residential and
+                    commercial properties
                 </h1>
-                <a href="#services" class="inline-block border-2 border-white text-white px-8 py-3 text-xs font-black uppercase tracking-widest hover:bg-brand-yellow hover:border-brand-yellow hover:text-black transition-all">
+                <a href="#services"
+                    class="inline-block border-2 border-white text-white px-8 py-3 text-xs font-black uppercase tracking-widest hover:bg-brand-yellow hover:border-brand-yellow hover:text-black transition-all">
                     Explore Our Products & Services &rarr;
                 </a>
             </div>
@@ -159,15 +379,21 @@
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16">
             <div>
                 <h2 class="text-brand-yellow text-3xl font-extrabold leading-tight mb-8">
-                    Welcome to our company, where we specialise in providing high-quality frameless glass solutions for both residential and commercial properties.
+                    Welcome to our company, where we specialise in providing high-quality frameless glass solutions for
+                    both residential and commercial properties.
                 </h2>
                 <p class="text-black font-bold text-xl leading-relaxed">
-                    Our range of products includes frameless glass balustrades, luxury showers, glass doors, front facades, cellars, and stacking systems.
+                    Our range of products includes frameless glass balustrades, luxury showers, glass doors, front
+                    facades, cellars, and stacking systems.
                 </p>
             </div>
             <div class="text-gray-600 text-base leading-relaxed space-y-6">
-                <p>Established in 1999 and headed by Midas Ndamase, Xinyanyani Projects is a Close Corporation with over 25 years of experience in structural delivery. We conceptualize strategies and genuine tools that empower our clientele through excellence.</p>
-                <p>Our frameless glass products are designed to enhance the aesthetics and functionality of any space, providing a sleek and modern look that seamlessly blends with the surrounding architectural environment.</p>
+                <p>Established in 1999 and headed by Midas Ndamase, Xinyanyani Projects is a Close Corporation with over
+                    25 years of experience in structural delivery. We conceptualize strategies and genuine tools that
+                    empower our clientele through excellence.</p>
+                <p>Our frameless glass products are designed to enhance the aesthetics and functionality of any space,
+                    providing a sleek and modern look that seamlessly blends with the surrounding architectural
+                    environment.</p>
             </div>
         </div>
     </section>
@@ -177,15 +403,219 @@
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center text-white">
             <div class="flex flex-col items-center">
                 <i class="fas fa-award text-4xl text-brand-yellow mb-6"></i>
-                <p class="text-xs leading-relaxed max-w-xs">At our company, we are committed to providing our customers with exceptional service and High-quality products, maintaining a high standard of quality in every project.</p>
+                <p class="text-xs leading-relaxed max-w-xs">At our company, we are committed to providing our customers
+                    with exceptional service and High-quality products, maintaining a high standard of quality in every
+                    project.</p>
             </div>
             <div class="flex flex-col items-center">
                 <i class="fas fa-users text-4xl text-brand-yellow mb-6"></i>
-                <p class="text-xs leading-relaxed max-w-xs">Our team of experienced professionals, led by Midas Ndamase, will work closely with you to understand your specific needs and design a customised structural solution.</p>
+                <p class="text-xs leading-relaxed max-w-xs">Our team of experienced professionals, led by Midas Ndamase,
+                    will work closely with you to understand your specific needs and design a customised structural
+                    solution.</p>
             </div>
             <div class="flex flex-col items-center">
                 <i class="fas fa-layer-group text-4xl text-brand-yellow mb-6"></i>
-                <p class="text-xs leading-relaxed max-w-xs">From concept to final installation, we guide you through every step of the process, ensuring all projects are completed on time and within budget.</p>
+                <p class="text-xs leading-relaxed max-w-xs">From concept to final installation, we guide you through
+                    every step of the process, ensuring all projects are completed on time and within budget.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Counter Section -->
+    <section class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="stat-item reveal">
+                    <div class="stat-number" data-count="25">25+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item reveal">
+                    <div class="stat-number" data-count="30">30+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-item reveal">
+                    <div class="stat-number" data-count="100">100%</div>
+                    <div class="stat-label">Client Satisfaction</div>
+                </div>
+                <div class="stat-item reveal">
+                    <div class="stat-number" data-count="50">50+</div>
+                    <div class="stat-label">Expert Craftsmen</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-24 bg-[#f8f8f8]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-black text-black mb-4 uppercase">Why Choose Us</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We deliver exceptional craftsmanship that transforms spaces
+                </p>
+                <div class="w-20 h-1.5 bg-brand-yellow mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3 class="text-lg font-black text-black mb-3 uppercase">Premium Quality</h3>
+                    <p class="text-gray-600 text-sm">We use only the highest quality tempered glass and premium
+                        materials for lasting durability.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="text-lg font-black text-black mb-3 uppercase">Expert Installation</h3>
+                    <p class="text-gray-600 text-sm">Our skilled technicians ensure precise, professional installation
+                        every time.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <h3 class="text-lg font-black text-black mb-3 uppercase">Custom Designs</h3>
+                    <p class="text-gray-600 text-sm">Every project is tailored to your specific requirements and
+                        aesthetic vision.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-lg font-black text-black mb-3 uppercase">Guaranteed Work</h3>
+                    <p class="text-gray-600 text-sm">All our installations come with comprehensive warranties for your
+                        peace of mind.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Carousel -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-black text-black mb-4 uppercase">Featured Projects</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Explore our portfolio of stunning glass installations</p>
+                <div class="w-20 h-1.5 bg-brand-yellow mx-auto mt-4"></div>
+            </div>
+            <div class="home-carousel" id="homeCarousel">
+                <div class="home-carousel-track" id="homeCarouselTrack">
+                    <div class="home-carousel-slide"><img src="gallery7.jpg" alt="Luxury Estate"></div>
+                    <div class="home-carousel-slide"><img src="balustrade.png" alt="Glass Balustrade"></div>
+                    <div class="home-carousel-slide"><img src="gallery23.jpg" alt="Night Patio"></div>
+                    <div class="home-carousel-slide"><img src="shower.jpg" alt="Frameless Shower"></div>
+                    <div class="home-carousel-slide"><img src="gallery21.jpg" alt="Estate View"></div>
+                    <div class="home-carousel-slide"><img src="patio.jpg" alt="Patio Doors"></div>
+                </div>
+            </div>
+            <div class="flex justify-center mt-8 gap-4">
+                <button id="homeCarouselPrev"
+                    class="w-12 h-12 bg-brand-yellow rounded-full flex items-center justify-center hover:bg-black hover:text-brand-yellow transition">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="homeCarouselNext"
+                    class="w-12 h-12 bg-brand-yellow rounded-full flex items-center justify-center hover:bg-black hover:text-brand-yellow transition">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="text-center mt-8">
+                <a href="services.html"
+                    class="inline-block border-2 border-black px-8 py-3 text-xs font-black uppercase tracking-widest hover:bg-black hover:text-white transition">
+                    View All Projects &rarr;
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-24 bg-[#1a1a1a]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-black text-white mb-4 uppercase">What Our Clients Say</h2>
+                <div class="w-20 h-1.5 bg-brand-yellow mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="testimonial-card reveal">
+                    <p class="text-gray-600 text-sm mb-6 pt-8">Xinyanyani transformed our home with stunning glass
+                        balustrades. The attention to detail and professionalism exceeded all expectations. Highly
+                        recommend!</p>
+                    <div class="flex items-center">
+                        <div
+                            class="w-12 h-12 bg-brand-yellow rounded-full flex items-center justify-center text-black font-black">
+                            JM</div>
+                        <div class="ml-4">
+                            <p class="font-black text-black">John Molefe</p>
+                            <p class="text-xs text-gray-500">Sandton Residence</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <p class="text-gray-600 text-sm mb-6 pt-8">The frameless shower installation was flawless. From
+                        consultation to completion, the team was professional and delivered on time. Beautiful work!</p>
+                    <div class="flex items-center">
+                        <div
+                            class="w-12 h-12 bg-brand-yellow rounded-full flex items-center justify-center text-black font-black">
+                            TN</div>
+                        <div class="ml-4">
+                            <p class="font-black text-black">Thabo Nkosi</p>
+                            <p class="text-xs text-gray-500">Midrand Villa</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <p class="text-gray-600 text-sm mb-6 pt-8">We've used Xinyanyani for multiple commercial projects.
+                        Their expertise in glass facades and stacking doors is unmatched. A true partner in excellence.
+                    </p>
+                    <div class="flex items-center">
+                        <div
+                            class="w-12 h-12 bg-brand-yellow rounded-full flex items-center justify-center text-black font-black">
+                            SM</div>
+                        <div class="ml-4">
+                            <p class="font-black text-black">Sarah Mthembu</p>
+                            <p class="text-xs text-gray-500">Property Developer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Process Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-black text-black mb-4 uppercase">Our Process</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">From consultation to installation, we make it seamless</p>
+                <div class="w-20 h-1.5 bg-brand-yellow mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="process-step reveal">
+                    <div class="process-line"></div>
+                    <div class="process-number">1</div>
+                    <h3 class="text-lg font-black text-black mb-2 uppercase">Consultation</h3>
+                    <p class="text-gray-600 text-sm">We visit your site to understand your vision and take precise
+                        measurements.</p>
+                </div>
+                <div class="process-step reveal">
+                    <div class="process-line"></div>
+                    <div class="process-number">2</div>
+                    <h3 class="text-lg font-black text-black mb-2 uppercase">Design</h3>
+                    <p class="text-gray-600 text-sm">Our team creates custom designs and provides a detailed quotation.
+                    </p>
+                </div>
+                <div class="process-step reveal">
+                    <div class="process-line"></div>
+                    <div class="process-number">3</div>
+                    <h3 class="text-lg font-black text-black mb-2 uppercase">Fabrication</h3>
+                    <p class="text-gray-600 text-sm">Premium materials are cut and prepared with precision in our
+                        workshop.</p>
+                </div>
+                <div class="process-step reveal">
+                    <div class="process-number">4</div>
+                    <h3 class="text-lg font-black text-black mb-2 uppercase">Installation</h3>
+                    <p class="text-gray-600 text-sm">Expert technicians install your glass system to perfection.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -194,9 +624,13 @@
     <section class="bg-brand-yellow py-12 relative overflow-hidden">
         <div class="absolute inset-0 banner-pattern"></div>
         <div class="max-w-7xl mx-auto px-6 relative z-10 text-center text-black">
-            <p class="text-sm font-semibold mb-2">Browse our website to explore our range of frameless glass products and contact us today to schedule a consultation with one of our experts.</p>
-            <p class="text-xl font-black mb-8 uppercase tracking-tight">Let us help you bring your vision to life with our stunning frameless glass solutions.</p>
-            <a href="#contact" class="inline-block border-2 border-black px-8 py-2 text-xs font-black uppercase tracking-widest hover:bg-black hover:text-brand-yellow transition">Contact Us &rarr;</a>
+            <p class="text-sm font-semibold mb-2">Browse our website to explore our range of frameless glass products
+                and contact us today to schedule a consultation with one of our experts.</p>
+            <p class="text-xl font-black mb-8 uppercase tracking-tight">Let us help you bring your vision to life with
+                our stunning frameless glass solutions.</p>
+            <a href="#contact"
+                class="inline-block border-2 border-black px-8 py-2 text-xs font-black uppercase tracking-widest hover:bg-black hover:text-brand-yellow transition">Contact
+                Us &rarr;</a>
         </div>
     </section>
 
@@ -211,39 +645,54 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Balustrades -->
                 <div class="service-card flex flex-col items-center">
-                    <img src="balustrade.png?auto=forma&fit=crop&w=600&q=80" class="w-full h-52 object-cover mb-6 grayscale hover:grayscale-0 transition duration-500" alt="Balustrades">
+                    <img src="balustrade.png?auto=forma&fit=crop&w=600&q=80"
+                        class="w-full h-52 object-cover mb-6 grayscale hover:grayscale-0 transition duration-500"
+                        alt="Balustrades">
                     <h4 class="text-xs font-black text-gray-700 uppercase tracking-widest mb-6">Balustrades</h4>
-                    <a href="#" class="btn-outline-yellow mb-8">View</a>
+                    <a href="services.html" class="btn-outline-yellow mb-8">View</a>
                 </div>
                 <!-- Showers -->
                 <div class="service-card flex flex-col items-center">
-                    <img src="shower.jpg?auto=format&fit=crop&w=600&q=80" class="w-full h-52 object-cover mb-6 grayscale hover:grayscale-0 transition duration-500" alt="Showers">
-                    <h4 class="text-xs font-black text-gray-700 uppercase tracking-widest mb-6">Showers & Shower Service</h4>
-                    <a href="#" class="btn-outline-yellow mb-8">View</a>
+                    <img src="shower.jpg?auto=format&fit=crop&w=600&q=80"
+                        class="w-full h-52 object-cover mb-6 grayscale hover:grayscale-0 transition duration-500"
+                        alt="Showers">
+                    <h4 class="text-xs font-black text-gray-700 uppercase tracking-widest mb-6">Showers & Shower Service
+                    </h4>
+                    <a href="services.html" class="btn-outline-yellow mb-8">View</a>
                 </div>
                 <!-- Enclosures -->
                 <div class="service-card flex flex-col items-center">
-                    <img src="office.png?auto=format&fit=crop&w=600&q=80" class="w-full h-52 object-cover mb-6 grayscale hover:grayscale-0 transition duration-500" alt="Enclosures">
-                    <h4 class="text-xs font-black text-gray-700 uppercase tracking-widest mb-6">Frameless Enclosures</h4>
-                    <a href="#" class="btn-outline-yellow mb-8">View</a>
+                    <img src="office.png?auto=format&fit=crop&w=600&q=80"
+                        class="w-full h-52 object-cover mb-6 grayscale hover:grayscale-0 transition duration-500"
+                        alt="Enclosures">
+                    <h4 class="text-xs font-black text-gray-700 uppercase tracking-widest mb-6">Frameless Enclosures
+                    </h4>
+                    <a href="services.html" class="btn-outline-yellow mb-8">View</a>
                 </div>
                 <!-- Patio -->
                 <div class="service-card flex flex-col items-center">
-                    <img src="patio.jpg?auto=format&fit=crop&w=600&q=80" class="w-full h-52 object-cover mb-6 grayscale hover:grayscale-0 transition duration-500" alt="Patio Enclosures">
+                    <img src="patio.jpg?auto=format&fit=crop&w=600&q=80"
+                        class="w-full h-52 object-cover mb-6 grayscale hover:grayscale-0 transition duration-500"
+                        alt="Patio Enclosures">
                     <h4 class="text-xs font-black text-gray-700 uppercase tracking-widest mb-6">Patio Enclosures</h4>
-                    <a href="#" class="btn-outline-yellow mb-8">View</a>
+                    <a href="services.html" class="btn-outline-yellow mb-8">View</a>
                 </div>
                 <!-- Aluminium -->
                 <div class="service-card flex flex-col items-center">
-                    <img src="alum.jpg?auto=format&fit=crop&w=600&q=80" class="w-full h-52 object-cover mb-6 grayscale hover:grayscale-0 transition duration-500" alt="Aluminium">
-                    <h4 class="text-xs font-black text-gray-700 uppercase tracking-widest mb-6">Aluminium Doors & Windows</h4>
-                    <a href="#" class="btn-outline-yellow mb-8">View</a>
+                    <img src="alum.jpg?auto=format&fit=crop&w=600&q=80"
+                        class="w-full h-52 object-cover mb-6 grayscale hover:grayscale-0 transition duration-500"
+                        alt="Aluminium">
+                    <h4 class="text-xs font-black text-gray-700 uppercase tracking-widest mb-6">Aluminium Doors &
+                        Windows</h4>
+                    <a href="services.html" class="btn-outline-yellow mb-8">View</a>
                 </div>
                 <!-- Mirrors -->
                 <div class="service-card flex flex-col items-center">
-                    <img src="door.jpg?auto=format&fit=crop&w=600&q=80" class="w-full h-52 object-cover mb-6 grayscale hover:grayscale-0 transition duration-500" alt="Door">
+                    <img src="door.jpg?auto=format&fit=crop&w=600&q=80"
+                        class="w-full h-52 object-cover mb-6 grayscale hover:grayscale-0 transition duration-500"
+                        alt="Door">
                     <h4 class="text-xs font-black text-gray-700 uppercase tracking-widest mb-6">Frameless Door</h4>
-                    <a href="#" class="btn-outline-yellow mb-8">View</a>
+                    <a href="services.html" class="btn-outline-yellow mb-8">View</a>
                 </div>
             </div>
         </div>
@@ -268,7 +717,8 @@
                 </div>
                 <div class="flex flex-col items-center">
                     <span class="text-3xl font-black text-black">SHE</span>
-                    <span class="text-[9px] font-bold text-gray-500 uppercase tracking-widest mt-2">Policy Compliant</span>
+                    <span class="text-[9px] font-bold text-gray-500 uppercase tracking-widest mt-2">Policy
+                        Compliant</span>
                 </div>
             </div>
         </div>
@@ -281,20 +731,23 @@
                 <!-- Brand Info -->
                 <div class="col-span-1">
                     <div class="flex items-center space-x-3 mb-8">
-                        <div class="w-10 h-10 bg-brand-yellow flex items-center justify-center text-black font-black text-xl">X</div>
+                        <div
+                            class="w-10 h-10 bg-brand-yellow flex items-center justify-center text-black font-black text-xl">
+                            X</div>
                         <span class="text-xl font-black tracking-tighter uppercase">XINYANYANI</span>
                     </div>
                     <h4 class="font-bold text-brand-yellow italic text-2xl mb-6">Famous for Frameless</h4>
-                    <p class="text-xs leading-relaxed text-gray-400">Specialist in providing High-quality frameless glass and aluminium solutions for both residential and commercial properties since 1999.</p>
+                    <p class="text-xs leading-relaxed text-gray-400">Specialist in providing High-quality frameless
+                        glass and aluminium solutions for both residential and commercial properties since 1999.</p>
                 </div>
                 <!-- Services -->
                 <div>
                     <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-brand-yellow mb-8">Solutions</h4>
                     <ul class="text-[11px] space-y-4 text-gray-400 font-bold uppercase tracking-wider">
-                        <li><a href="#" class="hover:text-white transition">Balustrades</a></li>
-                        <li><a href="#" class="hover:text-white transition">Frameless Showers</a></li>
-                        <li><a href="#" class="hover:text-white transition">Patio Enclosures</a></li>
-                        <li><a href="#" class="hover:text-white transition">Aluminium Systems</a></li>
+                        <li><a href="services.html" class="hover:text-white transition">Balustrades</a></li>
+                        <li><a href="services.html" class="hover:text-white transition">Frameless Showers</a></li>
+                        <li><a href="services.html" class="hover:text-white transition">Patio Enclosures</a></li>
+                        <li><a href="services.html" class="hover:text-white transition">Aluminium Systems</a></li>
                     </ul>
                 </div>
                 <!-- Values -->
@@ -309,7 +762,8 @@
                 </div>
                 <!-- Contact Us -->
                 <div>
-                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-brand-yellow mb-8">Direct Connect</h4>
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-brand-yellow mb-8">Direct Connect
+                    </h4>
                     <ul class="text-[11px] space-y-6 text-gray-400 font-bold uppercase tracking-wider">
                         <li class="flex items-start space-x-3">
                             <i class="fas fa-phone-alt text-brand-yellow mt-1"></i>
@@ -328,24 +782,74 @@
             </div>
 
             <!-- Social & Copyright -->
-            <div class="pt-10 border-t border-zinc-800 flex flex-col md:flex-row justify-between items-center text-[9px] font-black uppercase tracking-[0.5em] text-gray-600">
+            <div
+                class="pt-10 border-t border-zinc-800 flex flex-col md:flex-row justify-between items-center text-[9px] font-black uppercase tracking-[0.5em] text-gray-600">
                 <p>&copy; 2026 Xinyanyani Projects CC. All Rights Reserved.</p>
                 <div class="flex space-x-6 mt-6 md:mt-0">
-                    <a href="#" class="hover:text-brand-yellow transition"><i class="fab fa-linkedin-in text-lg"></i></a>
-                    <a href="#" class="hover:text-brand-yellow transition"><i class="fab fa-facebook-f text-lg"></i></a>
-                    <a href="#" class="hover:text-brand-yellow transition"><i class="fab fa-whatsapp text-lg"></i></a>
+                    <a href="https://www.linkedin.com/" target="_blank" class="hover:text-brand-yellow transition"><i
+                            class="fab fa-linkedin-in text-lg"></i></a>
+                    <a href="https://www.facebook.com/" target="_blank" class="hover:text-brand-yellow transition"><i
+                            class="fab fa-facebook-f text-lg"></i></a>
+                    <a href="https://wa.me/27765960629" target="_blank" class="hover:text-brand-yellow transition"><i
+                            class="fab fa-whatsapp text-lg"></i></a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileOverlay" class="mobile-overlay fixed inset-0 bg-black/50 z-[60]"></div>
+
+    <!-- Mobile Menu -->
+    <nav id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-72 bg-white z-[70] shadow-2xl">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-10">
+                <span class="text-xl font-black uppercase">Menu</span>
+                <button id="mobileMenuClose" class="text-2xl" aria-label="Close menu"><i
+                        class="fas fa-times"></i></button>
+            </div>
+            <ul class="space-y-6 text-sm font-bold uppercase tracking-wider">
+                <li><a href="index.html" class="block hover:text-brand-yellow transition">Home</a></li>
+                <li><a href="about.html" class="block hover:text-brand-yellow transition">About Us</a></li>
+                <li><a href="services.html" class="block hover:text-brand-yellow transition">Services</a></li>
+                <li><a href="contact.html" class="block hover:text-brand-yellow transition">Contact</a></li>
+            </ul>
+            <a href="contact.html"
+                class="mt-10 block text-center bg-brand-yellow text-black px-6 py-3 text-xs font-black uppercase hover:bg-black hover:text-brand-yellow transition">Request
+                Quote</a>
+        </div>
+    </nav>
+
     <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+
+        function openMenu() {
+            mobileMenu.classList.add('active');
+            mobileOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            mobileMenu.classList.remove('active');
+            mobileOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        mobileMenuBtn.addEventListener('click', openMenu);
+        mobileMenuClose.addEventListener('click', closeMenu);
+        mobileOverlay.addEventListener('click', closeMenu);
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
+                    closeMenu();
                     window.scrollTo({
                         top: target.offsetTop - 80,
                         behavior: 'smooth'
@@ -353,6 +857,55 @@
                 }
             });
         });
+
+        // Home Carousel
+        const homeCarouselTrack = document.getElementById('homeCarouselTrack');
+        const homeCarouselPrev = document.getElementById('homeCarouselPrev');
+        const homeCarouselNext = document.getElementById('homeCarouselNext');
+        let homeCarouselIndex = 0;
+        const slidesPerView = window.innerWidth < 768 ? 1 : 3;
+        const totalSlides = 6;
+        const maxIndex = totalSlides - slidesPerView;
+
+        function updateHomeCarousel() {
+            const slideWidth = 100 / slidesPerView;
+            homeCarouselTrack.style.transform = `translateX(-${homeCarouselIndex * slideWidth}%)`;
+        }
+
+        homeCarouselPrev.addEventListener('click', () => {
+            homeCarouselIndex = Math.max(0, homeCarouselIndex - 1);
+            updateHomeCarousel();
+        });
+
+        homeCarouselNext.addEventListener('click', () => {
+            homeCarouselIndex = Math.min(maxIndex, homeCarouselIndex + 1);
+            updateHomeCarousel();
+        });
+
+        // Auto-advance carousel (stops at end, no repeat)
+        setInterval(() => {
+            if (homeCarouselIndex < maxIndex) {
+                homeCarouselIndex++;
+                updateHomeCarousel();
+            }
+        }, 4000);
+
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal');
+
+        function checkReveal() {
+            revealElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (elementTop < windowHeight - 100) {
+                    el.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkReveal);
+        checkReveal(); // Initial check
     </script>
 </body>
+
 </html>
