@@ -344,6 +344,48 @@
         mobileMenuClose.addEventListener('click', closeMenu);
         mobileOverlay.addEventListener('click', closeMenu);
     </script>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-banner-content">
+            <div class="cookie-banner-text">
+                <h4><i class="fas fa-cookie-bite"></i> We Value Your Privacy</h4>
+                <p>We use cookies to enhance your browsing experience, serve personalized content, and analyze our
+                    traffic. By clicking "Accept All", you consent to our use of cookies.</p>
+            </div>
+            <div class="cookie-banner-buttons">
+                <button id="cookieDecline" class="cookie-btn cookie-btn-decline">Decline</button>
+                <button id="cookieAccept" class="cookie-btn cookie-btn-accept">Accept All</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Cookie Consent Management
+        (function () {
+            const cookieBanner = document.getElementById('cookieBanner');
+            const cookieAccept = document.getElementById('cookieAccept');
+            const cookieDecline = document.getElementById('cookieDecline');
+
+            const cookieConsent = localStorage.getItem('xyn_cookie_consent');
+
+            if (!cookieConsent) {
+                setTimeout(() => {
+                    cookieBanner.classList.add('show');
+                }, 1000);
+            }
+
+            cookieAccept.addEventListener('click', () => {
+                localStorage.setItem('xyn_cookie_consent', 'accepted');
+                cookieBanner.classList.remove('show');
+            });
+
+            cookieDecline.addEventListener('click', () => {
+                localStorage.setItem('xyn_cookie_consent', 'declined');
+                cookieBanner.classList.remove('show');
+            });
+        })();
+    </script>
 </body>
 
 </html>
