@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Primary SEO Meta Tags -->
-    <title>Frameless Glass Services & Gallery Johannesburg | Balustrades, Showers Gauteng</title>
+    <title>Frameless Glass Services & Epoxy Flooring Johannesburg | XYN Gallery Gauteng</title>
     <meta name="description"
-        content="View our frameless glass gallery & services in Johannesburg, Pretoria & Gauteng. Glass balustrades, frameless showers, patio enclosures, aluminium doors installation. Serving Sandton, Midrand, Centurion, Randburg & all Gauteng suburbs. Free consultation.">
+        content="View our frameless glass & epoxy flooring gallery in Johannesburg, Pretoria & Gauteng. Glass balustrades, frameless showers, patio enclosures, epoxy floors, aluminium doors installation. Serving Sandton, Midrand, Centurion & all Gauteng suburbs. Free consultation.">
     <meta name="keywords"
-        content="glass balustrades gallery, frameless shower installation Johannesburg, patio enclosure Sandton, aluminium doors Pretoria, glass installation Midrand, balustrade photos Centurion, shower door gallery, glass enclosures Gauteng, pool fencing Johannesburg, stacking doors South Africa">
-    <meta name="author" content="Xinyanyani Projects CC">
+        content="glass balustrades gallery, frameless shower installation Johannesburg, patio enclosure Sandton, aluminium doors Pretoria, epoxy flooring Midrand, metallic epoxy floors, glass installation, balustrade photos Centurion">
+    <meta name="author" content="XYN Frameless Glass & Epoxy Flooring">
     <meta name="robots" content="index, follow, max-image-preview:large">
 
     <!-- Geographic Meta Tags -->
@@ -19,638 +19,213 @@
     <meta name="geo.placename" content="Johannesburg, Gauteng, South Africa">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Frameless Glass Services & Gallery | Xinyanyani Projects Johannesburg">
+    <meta property="og:title" content="Frameless Glass & Epoxy Flooring Services | XYN Johannesburg">
     <meta property="og:description"
-        content="Browse our stunning gallery of frameless glass projects in Gauteng. Balustrades, showers, enclosures & more.">
+        content="Browse our stunning gallery of frameless glass and epoxy flooring projects in Gauteng. Balustrades, showers, enclosures & more.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_ZA">
-    <link rel="canonical" href="https://xinyanyani.co.za/services.html">
+    <link rel="canonical" href="https://xynframelessglass.co.za/services.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/favicon.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
-
-        :root {
-            --brand-yellow: #fbbf24;
-        }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-        }
-
-        .bg-brand-yellow {
-            background-color: var(--brand-yellow);
-        }
-
-        .text-brand-yellow {
-            color: var(--brand-yellow);
-        }
-
-        .nav-link {
-            font-size: 13px;
-            font-weight: 600;
-            color: #444;
-            transition: color 0.3s;
-        }
-
-        .nav-link:hover {
-            color: var(--brand-yellow);
-        }
-
-        .mobile-menu {
-            transform: translateX(100%);
-            transition: transform 0.3s;
-        }
-
-        .mobile-menu.active {
-            transform: translateX(0);
-        }
-
-        .mobile-overlay {
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
-        }
-
-        .mobile-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .service-card {
-            background: #fcfcfc;
-            transition: all 0.4s;
-            border: 1px solid #eee;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
-            border-color: var(--brand-yellow);
-        }
-
-        .gallery-item {
-            cursor: pointer;
-            overflow: hidden;
-        }
-
-        .gallery-item img {
-            transition: transform 0.5s;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .lightbox {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 100;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .lightbox.active {
-            display: flex;
-        }
-
-        .lightbox img {
-            max-width: 90%;
-            max-height: 90vh;
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-        }
-
-        .lightbox-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-            padding: 1rem;
-        }
-
-        .lightbox-prev {
-            left: 20px;
-        }
-
-        .lightbox-next {
-            right: 20px;
-        }
-
-        /* Video Gallery Styles */
-        .video-item {
-            position: relative;
-            cursor: pointer;
-            overflow: hidden;
-            border-radius: 0.5rem;
-        }
-
-        .video-item video {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .video-item:hover video {
-            transform: scale(1.05);
-        }
-
-        .video-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.4s ease;
-        }
-
-        .video-item:hover .video-overlay {
-            background: rgba(0, 0, 0, 0.2);
-        }
-
-        .play-btn {
-            width: 70px;
-            height: 70px;
-            background: var(--brand-yellow);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.4s ease;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .play-btn i {
-            color: black;
-            font-size: 1.5rem;
-            margin-left: 4px;
-        }
-
-        .video-item:hover .play-btn {
-            transform: scale(1.1);
-            box-shadow: 0 6px 30px rgba(255, 204, 0, 0.5);
-        }
-
-        .video-lightbox {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 100;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .video-lightbox.active {
-            display: flex;
-        }
-
-        .video-lightbox video {
-            max-width: 90%;
-            max-height: 85vh;
-            border-radius: 8px;
-        }
-
-        .video-lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-            z-index: 101;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .video-item {
-            opacity: 0;
-            animation: fadeInUp 0.6s ease forwards;
-        }
-
-        .video-item:nth-child(1) {
-            animation-delay: 0.1s;
-        }
-
-        .video-item:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        .video-item:nth-child(3) {
-            animation-delay: 0.3s;
-        }
-
-        /* Smart Carousel Styles */
-        .carousel-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 1rem;
-        }
-
-        .carousel-track {
-            display: flex;
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .carousel-slide {
-            min-width: 100%;
-            position: relative;
-        }
-
-        .carousel-slide img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-        }
-
-        .carousel-slide::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 50%);
-        }
-
-        .carousel-caption {
-            position: absolute;
-            bottom: 30px;
-            left: 30px;
-            z-index: 10;
-            color: white;
-        }
-
-        .carousel-caption h3 {
-            font-size: 1.5rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-        }
-
-        .carousel-caption p {
-            font-size: 0.875rem;
-            opacity: 0.9;
-        }
-
-        .carousel-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 50px;
-            height: 50px;
-            background: var(--brand-yellow);
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 20;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .carousel-nav:hover {
-            transform: translateY(-50%) scale(1.1);
-            box-shadow: 0 6px 25px rgba(255, 204, 0, 0.4);
-        }
-
-        .carousel-nav i {
-            color: black;
-            font-size: 1.25rem;
-        }
-
-        .carousel-prev {
-            left: 20px;
-        }
-
-        .carousel-next {
-            right: 20px;
-        }
-
-        .carousel-dots {
-            position: absolute;
-            bottom: 20px;
-            right: 30px;
-            display: flex;
-            gap: 8px;
-            z-index: 20;
-        }
-
-        .carousel-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .carousel-dot.active {
-            background: var(--brand-yellow);
-            transform: scale(1.2);
-        }
-
-        .carousel-dot:hover {
-            background: rgba(255, 255, 255, 0.8);
-        }
-
-        .carousel-progress {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            height: 4px;
-            background: var(--brand-yellow);
-            z-index: 20;
-            animation: progressBar 5s linear infinite;
-        }
-
-        @keyframes progressBar {
-            0% {
-                width: 0%;
-            }
-
-            100% {
-                width: 100%;
-            }
-        }
-
-        .carousel-container:hover .carousel-progress {
-            animation-play-state: paused;
-        }
-
-        @media (max-width: 768px) {
-            .carousel-slide img {
-                height: 350px;
-            }
-
-            .carousel-nav {
-                width: 40px;
-                height: 40px;
-            }
-
-            .carousel-caption h3 {
-                font-size: 1.25rem;
-            }
-
-            /* Gallery mobile */
-            .gallery-item {
-                height: 200px;
-            }
-
-            /* Video gallery mobile */
-            .video-item {
-                height: 200px;
-            }
-
-            .play-btn {
-                width: 50px;
-                height: 50px;
-            }
-
-            /* Lightbox mobile */
-            .lightbox-content {
-                max-width: 95%;
-                max-height: 80vh;
-            }
-
-            .lightbox-close {
-                top: 10px;
-                right: 10px;
-                font-size: 1.5rem;
-            }
-
-            .lightbox-prev,
-            .lightbox-next {
-                width: 35px;
-                height: 35px;
-            }
-
-            /* Service cards mobile */
-            .service-card {
-                padding: 1.5rem;
-            }
-        }
-
-        /* Extra small screens */
-        @media (max-width: 480px) {
-            .carousel-slide img {
-                height: 250px;
-            }
-
-            .carousel-caption h3 {
-                font-size: 1rem;
-            }
-
-            .carousel-caption p {
-                font-size: 0.75rem;
-            }
-
-            .gallery-item {
-                height: 150px;
-            }
-
-            .video-item {
-                height: 150px;
-            }
-
-            .play-btn {
-                width: 40px;
-                height: 40px;
-            }
-
-            .play-btn i {
-                font-size: 1rem;
-            }
-        }
-
-        .btn-outline-yellow {
-            border: 1px solid var(--brand-yellow);
-            color: var(--brand-yellow);
-            padding: 6px 20px;
-            font-size: 11px;
-            font-weight: 800;
-            text-transform: uppercase;
-            transition: all 0.3s;
-        }
-
-        .btn-outline-yellow:hover {
-            background: var(--brand-yellow);
-            color: #000;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/styles.css">
 </head>
 
 <body class="antialiased">
     <div
-        class="bg-black text-white py-2 px-6 md:px-12 flex justify-center md:justify-start items-center text-[10px] font-bold tracking-widest uppercase">
+        class="bg-[#1A3A4A] text-white py-2 px-6 md:px-12 flex justify-center md:justify-start items-center text-[10px] font-bold tracking-widest uppercase">
         <div class="flex items-center space-x-4 md:space-x-6">
-            <a href="tel:0765960629" class="hover:text-brand-yellow transition"><i
-                    class="fas fa-phone text-brand-yellow mr-2"></i><span class="hidden sm:inline">076 596
+            <a href="https://wa.me/27765960629" target="_blank" class="hover:text-brand-blue transition"><i
+                    class="fab fa-whatsapp text-green-400 mr-2"></i><span class="hidden sm:inline">076 596
                     0629</span></a>
-            <a href="mailto:xvnprojects@gmail.com" class="hover:text-brand-yellow transition"><i
-                    class="fas fa-envelope text-brand-yellow mr-2"></i><span
-                    class="hidden md:inline">xvnprojects@gmail.com</span></a>
+            <a href="mailto:info@xynframelessglass.co.za" class="hover:text-brand-blue transition"><i
+                    class="fas fa-envelope text-brand-blue mr-2"></i><span
+                    class="hidden md:inline">info@xynframelessglass.co.za</span></a>
         </div>
     </div>
-    <header class="bg-white py-5 px-6 md:px-12 sticky top-0 z-50 shadow-md">
+    <header class="bg-white py-4 px-6 md:px-12 sticky top-0 z-50 shadow-md">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="index.html" class="flex items-center space-x-4">
-                <div
-                    class="w-11 h-11 bg-black rounded-sm flex items-center justify-center text-brand-yellow font-black text-2xl border-2 border-brand-yellow">
-                    X</div>
-                <div class="flex flex-col">
-                    <span
-                        class="text-2xl font-black tracking-tighter text-black leading-none uppercase">XINYANYANI</span>
-                    <span class="text-[9px] font-bold text-brand-yellow uppercase tracking-[0.3em] mt-1">Frameless
-                        Master Piece</span>
-                </div>
+            <a href="index.html" class="flex items-center">
+                <img src="assets/logo.png" alt="XYN Frameless Glass & Epoxy Flooring" class="h-14 md:h-16">
             </a>
             <nav class="hidden lg:flex space-x-8 items-center uppercase tracking-tighter">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="about.html" class="nav-link">About Us</a>
-                <a href="services.html" class="nav-link text-brand-yellow">Services</a>
+                <a href="services.html" class="nav-link text-brand-blue">Services</a>
                 <a href="contact.html" class="nav-link">Contact</a>
                 <a href="contact.html"
-                    class="ml-4 bg-brand-yellow text-black px-6 py-2.5 rounded-sm text-xs font-black hover:bg-black hover:text-brand-yellow transition">Request
+                    class="ml-4 bg-brand-blue text-white px-6 py-2.5 rounded-sm text-xs font-black hover:bg-[#1A3A4A] transition">Request
                     Quote</a>
             </nav>
-            <button id="mobileMenuBtn" class="lg:hidden text-2xl text-black"><i
+            <button id="mobileMenuBtn" class="lg:hidden text-2xl text-[#1A3A4A]"><i
                     class="fas fa-bars-staggered"></i></button>
         </div>
     </header>
 
-    <section class="bg-black py-20">
+    <section class="bg-[#1A3A4A] py-20">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="w-20 h-1 bg-brand-yellow mb-6"></div>
+            <div class="w-20 h-1 bg-brand-blue mb-6"></div>
             <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Our Services</h1>
-            <p class="text-gray-400 text-lg">Premium frameless glass solutions for every space</p>
+            <p class="text-gray-400 text-lg">Premium frameless glass & epoxy flooring solutions for every space</p>
         </div>
     </section>
 
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-black text-black mb-4 uppercase">What We Offer</h2>
-                <div class="w-20 h-1.5 bg-brand-yellow mx-auto"></div>
+                <h2 class="text-3xl font-black text-[#1A3A4A] mb-4 uppercase">What We Offer</h2>
+                <div class="w-20 h-1.5 bg-brand-blue mx-auto"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="service-card rounded-lg overflow-hidden">
-                    <img src="balustrade.png" class="w-full h-56 object-cover" alt="Balustrades">
+                    <img src="assets/balustrade.png" class="w-full h-56 object-cover" alt="Balustrades">
                     <div class="p-6">
-                        <h3 class="text-lg font-black uppercase text-black mb-3">Frameless Balustrades</h3>
+                        <h3 class="text-lg font-black uppercase text-[#1A3A4A] mb-3">Frameless Balustrades</h3>
                         <p class="text-gray-600 text-sm mb-4">Stunning glass balustrades for balconies, staircases, and
                             pool areas.</p>
-                        <a href="contact.html" class="btn-outline-yellow inline-block">Get Quote</a>
+                        <a href="contact.html" class="btn-outline-blue inline-block">Get Quote</a>
                     </div>
                 </div>
                 <div class="service-card rounded-lg overflow-hidden">
-                    <img src="shower.jpg" class="w-full h-56 object-cover" alt="Showers">
+                    <img src="assets/shower.jpg" class="w-full h-56 object-cover" alt="Showers">
                     <div class="p-6">
-                        <h3 class="text-lg font-black uppercase text-black mb-3">Frameless Showers</h3>
+                        <h3 class="text-lg font-black uppercase text-[#1A3A4A] mb-3">Frameless Showers</h3>
                         <p class="text-gray-600 text-sm mb-4">Elegant shower enclosures with modern aesthetics.</p>
-                        <a href="contact.html" class="btn-outline-yellow inline-block">Get Quote</a>
+                        <a href="contact.html" class="btn-outline-blue inline-block">Get Quote</a>
                     </div>
                 </div>
                 <div class="service-card rounded-lg overflow-hidden">
-                    <img src="office.png" class="w-full h-56 object-cover" alt="Enclosures">
+                    <img src="assets/office.png" class="w-full h-56 object-cover" alt="Enclosures">
                     <div class="p-6">
-                        <h3 class="text-lg font-black uppercase text-black mb-3">Frameless Enclosures</h3>
+                        <h3 class="text-lg font-black uppercase text-[#1A3A4A] mb-3">Frameless Enclosures</h3>
                         <p class="text-gray-600 text-sm mb-4">Office partitions and specialty enclosures.</p>
-                        <a href="contact.html" class="btn-outline-yellow inline-block">Get Quote</a>
+                        <a href="contact.html" class="btn-outline-blue inline-block">Get Quote</a>
                     </div>
                 </div>
                 <div class="service-card rounded-lg overflow-hidden">
-                    <img src="patio.jpg" class="w-full h-56 object-cover" alt="Patio">
+                    <img src="assets/patio.jpg" class="w-full h-56 object-cover" alt="Patio">
                     <div class="p-6">
-                        <h3 class="text-lg font-black uppercase text-black mb-3">Patio Enclosures</h3>
+                        <h3 class="text-lg font-black uppercase text-[#1A3A4A] mb-3">Patio Enclosures</h3>
                         <p class="text-gray-600 text-sm mb-4">Extend your living space with patio enclosures.</p>
-                        <a href="contact.html" class="btn-outline-yellow inline-block">Get Quote</a>
+                        <a href="contact.html" class="btn-outline-blue inline-block">Get Quote</a>
                     </div>
                 </div>
                 <div class="service-card rounded-lg overflow-hidden">
-                    <img src="alum.jpg" class="w-full h-56 object-cover" alt="Aluminium">
+                    <img src="assets/alum.jpg" class="w-full h-56 object-cover" alt="Aluminium">
                     <div class="p-6">
-                        <h3 class="text-lg font-black uppercase text-black mb-3">Aluminium Systems</h3>
+                        <h3 class="text-lg font-black uppercase text-[#1A3A4A] mb-3">Aluminium Systems</h3>
                         <p class="text-gray-600 text-sm mb-4">Premium aluminium doors and windows.</p>
-                        <a href="contact.html" class="btn-outline-yellow inline-block">Get Quote</a>
+                        <a href="contact.html" class="btn-outline-blue inline-block">Get Quote</a>
                     </div>
                 </div>
                 <div class="service-card rounded-lg overflow-hidden">
-                    <img src="door.jpg" class="w-full h-56 object-cover" alt="Doors">
+                    <img src="assets/door.jpg" class="w-full h-56 object-cover" alt="Doors">
                     <div class="p-6">
-                        <h3 class="text-lg font-black uppercase text-black mb-3">Frameless Doors</h3>
+                        <h3 class="text-lg font-black uppercase text-[#1A3A4A] mb-3">Frameless Doors</h3>
                         <p class="text-gray-600 text-sm mb-4">Glass doors for shops, offices, and homes.</p>
-                        <a href="contact.html" class="btn-outline-yellow inline-block">Get Quote</a>
+                        <a href="contact.html" class="btn-outline-blue inline-block">Get Quote</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Epoxy Flooring Section -->
+    <section class="py-20 bg-[#f8f8f8]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-black text-[#1A3A4A] mb-4 uppercase">Epoxy Flooring Solutions</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Transform your floors with our premium epoxy coating services
+                </p>
+                <div class="w-20 h-1.5 bg-brand-blue mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="service-card rounded-lg overflow-hidden text-center p-6">
+                    <div class="w-16 h-16 bg-brand-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-industry text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-black uppercase text-[#1A3A4A] mb-3">Industrial Epoxy</h3>
+                    <p class="text-gray-600 text-sm mb-4">Heavy-duty coatings for warehouses, factories, and industrial
+                        facilities.</p>
+                    <a href="contact.html" class="btn-outline-blue inline-block">Get Quote</a>
+                </div>
+                <div class="service-card rounded-lg overflow-hidden text-center p-6">
+                    <div class="w-16 h-16 bg-brand-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-gem text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-black uppercase text-[#1A3A4A] mb-3">Metallic Epoxy</h3>
+                    <p class="text-gray-600 text-sm mb-4">Stunning 3D metallic finishes for homes and commercial spaces.
+                    </p>
+                    <a href="contact.html" class="btn-outline-blue inline-block">Get Quote</a>
+                </div>
+                <div class="service-card rounded-lg overflow-hidden text-center p-6">
+                    <div class="w-16 h-16 bg-brand-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-home text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-black uppercase text-[#1A3A4A] mb-3">Residential Epoxy</h3>
+                    <p class="text-gray-600 text-sm mb-4">Durable, beautiful floors for garages, basements, and living
+                        areas.</p>
+                    <a href="contact.html" class="btn-outline-blue inline-block">Get Quote</a>
+                </div>
+                <div class="service-card rounded-lg overflow-hidden text-center p-6">
+                    <div class="w-16 h-16 bg-brand-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-palette text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-black uppercase text-[#1A3A4A] mb-3">Decorative Floors</h3>
+                    <p class="text-gray-600 text-sm mb-4">Custom colors, patterns, and flake systems for unique designs.
+                    </p>
+                    <a href="contact.html" class="btn-outline-blue inline-block">Get Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Smart Gallery Carousel -->
-    <section class="py-20 bg-black">
+    <section class="py-20 bg-[#1A3A4A]">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-black text-white uppercase mb-4">Featured Projects</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">Explore our stunning glass installations across residential
+                <p class="text-gray-400 max-w-2xl mx-auto">Explore our stunning glass and flooring installations across
+                    residential
                     and commercial properties</p>
-                <div class="w-20 h-1.5 bg-brand-yellow mx-auto mt-4"></div>
+                <div class="w-20 h-1.5 bg-brand-blue mx-auto mt-4"></div>
             </div>
             <div class="carousel-container" id="carousel">
                 <div class="carousel-track" id="carouselTrack">
                     <div class="carousel-slide">
-                        <img src="gallery7.jpg" alt="Luxury Estate">
+                        <img src="assets/gallery7.jpg" alt="Luxury Estate">
                         <div class="carousel-caption">
                             <h3>Luxury Estate</h3>
                             <p>Complete glass balustrade installation</p>
                         </div>
                     </div>
                     <div class="carousel-slide">
-                        <img src="gallery12.jpg" alt="Modern Pool House">
+                        <img src="assets/gallery12.jpg" alt="Modern Pool House">
                         <div class="carousel-caption">
                             <h3>Modern Pool House</h3>
                             <p>Frameless glass doors & pool fencing</p>
                         </div>
                     </div>
                     <div class="carousel-slide">
-                        <img src="gallery23.jpg" alt="Night Ambiance">
+                        <img src="assets/gallery23.jpg" alt="Night Ambiance">
                         <div class="carousel-caption">
                             <h3>Night Ambiance</h3>
                             <p>Stacking doors for indoor-outdoor living</p>
                         </div>
                     </div>
                     <div class="carousel-slide">
-                        <img src="gallery18.jpg" alt="Curved Staircase">
+                        <img src="assets/gallery18.jpg" alt="Curved Staircase">
                         <div class="carousel-caption">
                             <h3>Curved Staircase</h3>
                             <p>Custom curved glass balustrade</p>
                         </div>
                     </div>
                     <div class="carousel-slide">
-                        <img src="gallery27.jpg" alt="Entertainment Area">
+                        <img src="assets/gallery27.jpg" alt="Entertainment Area">
                         <div class="carousel-caption">
                             <h3>Entertainment Area</h3>
                             <p>Glass-enclosed braai & patio</p>
@@ -670,79 +245,79 @@
     <section class="py-20 bg-[#f8f8f8]">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-black text-black mb-4 uppercase">Project Gallery</h2>
-                <div class="w-20 h-1.5 bg-brand-yellow mx-auto"></div>
+                <h2 class="text-3xl font-black text-[#1A3A4A] mb-4 uppercase">Project Gallery</h2>
+                <div class="w-20 h-1.5 bg-brand-blue mx-auto"></div>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                <div class="gallery-item rounded-lg overflow-hidden" data-index="0"><img src="balustrade.png"
+                <div class="gallery-item rounded-lg overflow-hidden" data-index="0"><img src="assets/balustrade.png"
                         alt="Glass Balustrade" class="w-full h-48 object-cover"></div>
-                <div class="gallery-item rounded-lg overflow-hidden" data-index="1"><img src="shower.jpg"
+                <div class="gallery-item rounded-lg overflow-hidden" data-index="1"><img src="assets/shower.jpg"
                         alt="Frameless Shower" class="w-full h-48 object-cover"></div>
-                <div class="gallery-item rounded-lg overflow-hidden" data-index="2"><img src="gallery3.jpg"
+                <div class="gallery-item rounded-lg overflow-hidden" data-index="2"><img src="assets/gallery3.jpg"
                         alt="Curved Staircase Balustrade" class="w-full h-48 object-cover"></div>
-                <div class="gallery-item rounded-lg overflow-hidden" data-index="3"><img src="gallery2.jpg"
+                <div class="gallery-item rounded-lg overflow-hidden" data-index="3"><img src="assets/gallery2.jpg"
                         alt="Marble Shower Enclosure" class="w-full h-48 object-cover"></div>
-                <div class="gallery-item rounded-lg overflow-hidden" data-index="4"><img src="gallery1.jpg"
+                <div class="gallery-item rounded-lg overflow-hidden" data-index="4"><img src="assets/gallery1.jpg"
                         alt="Glass Floor Balustrade" class="w-full h-48 object-cover"></div>
-                <div class="gallery-item rounded-lg overflow-hidden" data-index="5"><img src="gallery4.jpg"
+                <div class="gallery-item rounded-lg overflow-hidden" data-index="5"><img src="assets/gallery4.jpg"
                         alt="Modern Shower" class="w-full h-48 object-cover"></div>
-                <div class="gallery-item rounded-lg overflow-hidden" data-index="6"><img src="gallery5.jpg"
+                <div class="gallery-item rounded-lg overflow-hidden" data-index="6"><img src="assets/gallery5.jpg"
                         alt="Glass Patio Enclosure" class="w-full h-48 object-cover"></div>
-                <div class="gallery-item rounded-lg overflow-hidden" data-index="7"><img src="office.png"
+                <div class="gallery-item rounded-lg overflow-hidden" data-index="7"><img src="assets/office.png"
                         alt="Office Partition" class="w-full h-48 object-cover"></div>
-                <div class="gallery-item rounded-lg overflow-hidden" data-index="8"><img src="patio.jpg"
+                <div class="gallery-item rounded-lg overflow-hidden" data-index="8"><img src="assets/patio.jpg"
                         alt="Patio Doors" class="w-full h-48 object-cover"></div>
-                <div class="gallery-item rounded-lg overflow-hidden" data-index="9"><img src="alum.jpg"
+                <div class="gallery-item rounded-lg overflow-hidden" data-index="9"><img src="assets/alum.jpg"
                         alt="Aluminium Windows" class="w-full h-48 object-cover"></div>
-                <div class="gallery-item rounded-lg overflow-hidden" data-index="10"><img src="door.jpg"
+                <div class="gallery-item rounded-lg overflow-hidden" data-index="10"><img src="assets/door.jpg"
                         alt="Frameless Door" class="w-full h-48 object-cover"></div>
-                <div class="gallery-item rounded-lg overflow-hidden" data-index="11"><img src="gallery6.jpg"
+                <div class="gallery-item rounded-lg overflow-hidden" data-index="11"><img src="assets/gallery6.jpg"
                         alt="Curved Staircase Balustrade" class="w-full h-48 object-cover"></div>
-                <div class="gallery-item rounded-lg overflow-hidden" data-index="12"><img src="gallery7.jpg"
+                <div class="gallery-item rounded-lg overflow-hidden" data-index="12"><img src="assets/gallery7.jpg"
                         alt="Luxury Home Exterior" class="w-full h-48 object-cover"></div>
-                <div class="gallery-item rounded-lg overflow-hidden" data-index="13"><img src="gallery8.jpg"
+                <div class="gallery-item rounded-lg overflow-hidden" data-index="13"><img src="assets/gallery8.jpg"
                         alt="Balcony Glass Doors" class="w-full h-48 object-cover"></div>
-                <div class="gallery-item rounded-lg overflow-hidden" data-index="14"><img src="gallery9.jpg"
+                <div class="gallery-item rounded-lg overflow-hidden" data-index="14"><img src="assets/gallery9.jpg"
                         alt="Corner Shower Enclosure" class="w-full h-48 object-cover"></div>
-                <div class="gallery-item rounded-lg overflow-hidden" data-index="15"><img src="gallery10.jpg"
+                <div class="gallery-item rounded-lg overflow-hidden" data-index="15"><img src="assets/gallery10.jpg"
                         alt="Panoramic Glass Doors" class="w-full h-48 object-cover"></div>
-                <div class="gallery-item rounded-lg overflow-hidden" data-index="16"><img src="gallery11.jpg"
+                <div class="gallery-item rounded-lg overflow-hidden" data-index="16"><img src="assets/gallery11.jpg"
                         alt="Curved Staircase" class="w-full h-48 object-cover"></div>
-                <div class="gallery-item rounded-lg overflow-hidden" data-index="17"><img src="gallery12.jpg"
+                <div class="gallery-item rounded-lg overflow-hidden" data-index="17"><img src="assets/gallery12.jpg"
                         alt="Luxury Estate" class="w-full h-48 object-cover"></div>
-                <div class="gallery-item rounded-lg overflow-hidden" data-index="18"><img src="gallery13.jpg"
+                <div class="gallery-item rounded-lg overflow-hidden" data-index="18"><img src="assets/gallery13.jpg"
                         alt="Balcony View" class="w-full h-48 object-cover"></div>
-                <div class="gallery-item rounded-lg overflow-hidden" data-index="19"><img src="gallery14.jpg"
+                <div class="gallery-item rounded-lg overflow-hidden" data-index="19"><img src="assets/gallery14.jpg"
                         alt="Corner Shower" class="w-full h-48 object-cover"></div>
-                <div class="gallery-item rounded-lg overflow-hidden" data-index="20"><img src="gallery15.jpg"
+                <div class="gallery-item rounded-lg overflow-hidden" data-index="20"><img src="assets/gallery15.jpg"
                         alt="Panoramic View" class="w-full h-48 object-cover"></div>
-                <div class="gallery-item rounded-lg overflow-hidden" data-index="21"><img src="gallery16.jpg"
+                <div class="gallery-item rounded-lg overflow-hidden" data-index="21"><img src="assets/gallery16.jpg"
                         alt="Black Frame Shower" class="w-full h-48 object-cover"></div>
-                <div class="gallery-item rounded-lg overflow-hidden" data-index="22"><img src="gallery17.jpg"
+                <div class="gallery-item rounded-lg overflow-hidden" data-index="22"><img src="assets/gallery17.jpg"
                         alt="Corner Glass Room" class="w-full h-48 object-cover"></div>
-                <div class="gallery-item rounded-lg overflow-hidden" data-index="23"><img src="gallery18.jpg"
+                <div class="gallery-item rounded-lg overflow-hidden" data-index="23"><img src="assets/gallery18.jpg"
                         alt="Curved Staircase Detail" class="w-full h-48 object-cover"></div>
-                <div class="gallery-item rounded-lg overflow-hidden" data-index="24"><img src="gallery19.jpg"
+                <div class="gallery-item rounded-lg overflow-hidden" data-index="24"><img src="assets/gallery19.jpg"
                         alt="Multi-Level Balustrade" class="w-full h-48 object-cover"></div>
-                <div class="gallery-item rounded-lg overflow-hidden" data-index="25"><img src="gallery20.jpg"
+                <div class="gallery-item rounded-lg overflow-hidden" data-index="25"><img src="assets/gallery20.jpg"
                         alt="Stacking Doors" class="w-full h-48 object-cover"></div>
-                <div class="gallery-item rounded-lg overflow-hidden" data-index="26"><img src="gallery21.jpg"
+                <div class="gallery-item rounded-lg overflow-hidden" data-index="26"><img src="assets/gallery21.jpg"
                         alt="Modern Estate" class="w-full h-48 object-cover"></div>
-                <div class="gallery-item rounded-lg overflow-hidden" data-index="27"><img src="gallery22.jpg"
+                <div class="gallery-item rounded-lg overflow-hidden" data-index="27"><img src="assets/gallery22.jpg"
                         alt="Estate Pool Area" class="w-full h-48 object-cover"></div>
-                <div class="gallery-item rounded-lg overflow-hidden" data-index="28"><img src="gallery23.jpg"
+                <div class="gallery-item rounded-lg overflow-hidden" data-index="28"><img src="assets/gallery23.jpg"
                         alt="Night Patio" class="w-full h-48 object-cover"></div>
-                <div class="gallery-item rounded-lg overflow-hidden" data-index="29"><img src="gallery24.jpg"
+                <div class="gallery-item rounded-lg overflow-hidden" data-index="29"><img src="assets/gallery24.jpg"
                         alt="Glass Entrance" class="w-full h-48 object-cover"></div>
-                <div class="gallery-item rounded-lg overflow-hidden" data-index="30"><img src="gallery25.jpg"
+                <div class="gallery-item rounded-lg overflow-hidden" data-index="30"><img src="assets/gallery25.jpg"
                         alt="Pool Entry" class="w-full h-48 object-cover"></div>
-                <div class="gallery-item rounded-lg overflow-hidden" data-index="31"><img src="gallery26.jpg"
+                <div class="gallery-item rounded-lg overflow-hidden" data-index="31"><img src="assets/gallery26.jpg"
                         alt="Panoramic Lounge" class="w-full h-48 object-cover"></div>
-                <div class="gallery-item rounded-lg overflow-hidden" data-index="32"><img src="gallery27.jpg"
+                <div class="gallery-item rounded-lg overflow-hidden" data-index="32"><img src="assets/gallery27.jpg"
                         alt="Night Braai Area" class="w-full h-48 object-cover"></div>
-                <div class="rounded-lg bg-brand-yellow flex items-center justify-center h-48">
-                    <div class="text-center"><span class="text-4xl font-black text-black">50+</span>
-                        <p class="text-xs font-bold uppercase text-black mt-2">Projects</p>
+                <div class="rounded-lg bg-brand-blue flex items-center justify-center h-48">
+                    <div class="text-center"><span class="text-4xl font-black text-white">50+</span>
+                        <p class="text-xs font-bold uppercase text-white mt-2">Projects</p>
                     </div>
                 </div>
             </div>
@@ -757,13 +332,13 @@
     </div>
 
     <!-- Video Gallery Section -->
-    <section class="bg-gray-900 py-16">
+    <section class="bg-[#0d2a36] py-16">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-black text-white uppercase mb-4">Project Videos</h2>
                 <p class="text-gray-400 max-w-2xl mx-auto">Watch our craftsmanship in action - see how we transform
                     spaces with precision glass installations</p>
-                <div class="w-20 h-1.5 bg-brand-yellow mx-auto mt-4"></div>
+                <div class="w-20 h-1.5 bg-brand-blue mx-auto mt-4"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="video-item" data-video="videos/video1.mp4">
@@ -802,215 +377,221 @@
         </video>
     </div>
 
-    <section class="bg-brand-yellow py-16">
-        <div class="max-w-7xl mx-auto px-6 text-center text-black">
+    <!-- CTA -->
+    <section class="bg-brand-blue py-16">
+        <div class="max-w-7xl mx-auto px-6 text-center text-white">
             <h2 class="text-2xl font-black mb-4 uppercase">Ready to Start Your Project?</h2>
+            <p class="text-sm mb-8 max-w-2xl mx-auto">Contact us today for a free consultation and quote on your
+                frameless glass or epoxy flooring project.</p>
             <a href="contact.html"
-                class="inline-block border-2 border-black px-8 py-3 text-xs font-black uppercase hover:bg-black hover:text-brand-yellow transition">Get
-                Free Quote &rarr;</a>
+                class="inline-block border-2 border-white px-8 py-3 text-xs font-black uppercase tracking-widest hover:bg-white hover:text-brand-blue transition">Get
+                in Touch &rarr;</a>
         </div>
     </section>
 
-    <footer class="bg-[#1a1a1a] text-white pt-16 pb-8">
+    <!-- Footer -->
+    <footer class="bg-[#1A3A4A] text-white pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                 <div>
-                    <div class="flex items-center space-x-3 mb-6">
-                        <div
-                            class="w-10 h-10 bg-brand-yellow flex items-center justify-center text-black font-black text-xl">
-                            X</div><span class="text-xl font-black uppercase">XINYANYANI</span>
+                    <div class="mb-6">
+                        <img src="assets/logo.png" alt="XYN Frameless Glass" class="w-1/2">
                     </div>
-                    <p class="text-xs text-gray-400">Frameless glass specialists since 1999.</p>
+                    <p class="text-xs leading-relaxed text-gray-400">Specialist in high-quality frameless glass,
+                        aluminium, and epoxy flooring solutions since 1999.</p>
                 </div>
                 <div>
-                    <h4 class="text-[10px] font-black uppercase text-brand-yellow mb-6">Links</h4>
-                    <ul class="text-[11px] space-y-3 text-gray-400 font-bold uppercase">
-                        <li><a href="index.html" class="hover:text-white">Home</a></li>
-                        <li><a href="about.html" class="hover:text-white">About</a></li>
-                        <li><a href="services.html" class="hover:text-white">Services</a></li>
-                        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-brand-blue mb-6">Quick Links</h4>
+                    <ul class="text-[11px] space-y-3 text-gray-400 font-bold uppercase tracking-wider">
+                        <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+                        <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="services.html" class="hover:text-white transition">Services</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-[10px] font-black uppercase text-brand-yellow mb-6">Services</h4>
-                    <ul class="text-[11px] space-y-3 text-gray-400 font-bold uppercase">
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-brand-blue mb-6">Services</h4>
+                    <ul class="text-[11px] space-y-3 text-gray-400 font-bold uppercase tracking-wider">
                         <li>Balustrades</li>
-                        <li>Showers</li>
-                        <li>Patios</li>
-                        <li>Aluminium</li>
+                        <li>Frameless Showers</li>
+                        <li>Patio Enclosures</li>
+                        <li>Epoxy Flooring</li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-[10px] font-black uppercase text-brand-yellow mb-6">Contact</h4>
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-brand-blue mb-6">Contact</h4>
                     <ul class="text-[11px] space-y-4 text-gray-400 font-bold">
-                        <li><i class="fas fa-phone-alt text-brand-yellow mr-2"></i>076 596 0629</li>
-                        <li><i class="fas fa-envelope text-brand-yellow mr-2"></i>xvnprojects@gmail.com</li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fab fa-whatsapp text-green-400 mt-1"></i>
+                            <span>076 596 0629 / 082 062 6968 / 069 245 4086</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-envelope text-brand-blue mt-1"></i>
+                            <span class="break-all">info@xynframelessglass.co.za</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-map-marker-alt text-brand-blue mt-1"></i>
+                            <span>449 Radebe Street, Emdeni South, Soweto, Johannesburg</span>
+                        </li>
                     </ul>
                 </div>
             </div>
-            <div class="pt-8 border-t border-zinc-800 text-center text-[9px] text-gray-600">&copy; 2026 Xinyanyani
-                Projects CC</div>
+            <div
+                class="pt-8 border-t border-[#2a4a5a] flex flex-col md:flex-row justify-between items-center text-[9px] font-black uppercase tracking-[0.5em] text-gray-500">
+                <p>&copy; 2026 XYN Frameless Glass & Epoxy Flooring. All Rights Reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="https://www.linkedin.com/" target="_blank" class="hover:text-brand-blue transition"><i
+                            class="fab fa-linkedin-in text-lg"></i></a>
+                    <a href="https://www.facebook.com/" target="_blank" class="hover:text-brand-blue transition"><i
+                            class="fab fa-facebook-f text-lg"></i></a>
+                    <a href="https://wa.me/27765960629" target="_blank" class="hover:text-brand-blue transition"><i
+                            class="fab fa-whatsapp text-lg"></i></a>
+                </div>
+            </div>
         </div>
     </footer>
 
+    <!-- Mobile Menu Overlay -->
     <div id="mobileOverlay" class="mobile-overlay fixed inset-0 bg-black/50 z-[60]"></div>
+
+    <!-- Mobile Menu -->
     <nav id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-72 bg-white z-[70] shadow-2xl">
         <div class="p-6">
-            <div class="flex justify-between items-center mb-10"><span
-                    class="text-xl font-black uppercase">Menu</span><button id="mobileMenuClose" class="text-2xl"><i
-                        class="fas fa-times"></i></button></div>
-            <ul class="space-y-6 text-sm font-bold uppercase">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html" class="text-brand-yellow">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
+            <div class="flex justify-between items-center mb-10">
+                <span class="text-xl font-black uppercase text-[#1A3A4A]">Menu</span>
+                <button id="mobileMenuClose" class="text-2xl text-[#1A3A4A]"><i class="fas fa-times"></i></button>
+            </div>
+            <ul class="space-y-6 text-sm font-bold uppercase tracking-wider">
+                <li><a href="index.html" class="block hover:text-brand-blue transition">Home</a></li>
+                <li><a href="about.html" class="block hover:text-brand-blue transition">About Us</a></li>
+                <li><a href="services.html" class="block text-brand-blue">Services</a></li>
+                <li><a href="contact.html" class="block hover:text-brand-blue transition">Contact</a></li>
             </ul>
+            <a href="contact.html"
+                class="mt-10 block text-center bg-brand-blue text-white px-6 py-3 text-xs font-black uppercase hover:bg-[#1A3A4A] transition">Request
+                Quote</a>
         </div>
     </nav>
 
     <script>
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn'), mobileMenuClose = document.getElementById('mobileMenuClose'), mobileMenu = document.getElementById('mobileMenu'), mobileOverlay = document.getElementById('mobileOverlay');
-        function openMenu() { mobileMenu.classList.add('active'); mobileOverlay.classList.add('active'); document.body.style.overflow = 'hidden'; }
-        function closeMenu() { mobileMenu.classList.remove('active'); mobileOverlay.classList.remove('active'); document.body.style.overflow = ''; }
-        mobileMenuBtn.addEventListener('click', openMenu); mobileMenuClose.addEventListener('click', closeMenu); mobileOverlay.addEventListener('click', closeMenu);
-        const galleryItems = document.querySelectorAll('.gallery-item[data-index]'), lightbox = document.getElementById('lightbox'), lightboxImg = document.getElementById('lightboxImg');
-        const images = ['balustrade.png', 'shower.jpg', 'gallery3.jpg', 'gallery2.jpg', 'gallery1.jpg', 'gallery4.jpg', 'gallery5.jpg', 'office.png', 'patio.jpg', 'alum.jpg', 'door.jpg', 'gallery6.jpg', 'gallery7.jpg', 'gallery8.jpg', 'gallery9.jpg', 'gallery10.jpg', 'gallery11.jpg', 'gallery12.jpg', 'gallery13.jpg', 'gallery14.jpg', 'gallery15.jpg', 'gallery16.jpg', 'gallery17.jpg', 'gallery18.jpg', 'gallery19.jpg', 'gallery20.jpg', 'gallery21.jpg', 'gallery22.jpg', 'gallery23.jpg', 'gallery24.jpg', 'gallery25.jpg', 'gallery26.jpg', 'gallery27.jpg'];
-        let currentIndex = 0;
-        function openLightbox(i) { currentIndex = i; lightboxImg.src = images[currentIndex]; lightbox.classList.add('active'); document.body.style.overflow = 'hidden'; }
-        function closeLightbox() { lightbox.classList.remove('active'); document.body.style.overflow = ''; }
-        galleryItems.forEach(item => item.addEventListener('click', () => openLightbox(parseInt(item.getAttribute('data-index')))));
-        document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
-        document.getElementById('lightboxPrev').addEventListener('click', () => { currentIndex = (currentIndex - 1 + images.length) % images.length; lightboxImg.src = images[currentIndex]; });
-        document.getElementById('lightboxNext').addEventListener('click', () => { currentIndex = (currentIndex + 1) % images.length; lightboxImg.src = images[currentIndex]; });
-        lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileOverlay = document.getElementById('mobileOverlay');
 
-        // Video Gallery Functionality
-        const videoItems = document.querySelectorAll('.video-item');
-        const videoLightbox = document.getElementById('videoLightbox');
-        const lightboxVideo = document.getElementById('lightboxVideo');
+        function openMenu() {
+            mobileMenu.classList.add('active');
+            mobileOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
 
-        // Hover to preview
-        videoItems.forEach(item => {
-            const video = item.querySelector('video');
-
-            item.addEventListener('mouseenter', () => {
-                video.play().catch(() => { });
-            });
-
-            item.addEventListener('mouseleave', () => {
-                video.pause();
-                video.currentTime = 0;
-            });
-
-            // Click to open lightbox
-            item.addEventListener('click', () => {
-                const videoSrc = item.getAttribute('data-video');
-                lightboxVideo.src = videoSrc;
-                videoLightbox.classList.add('active');
-                document.body.style.overflow = 'hidden';
-                lightboxVideo.play();
-            });
-        });
-
-        // Close video lightbox
-        document.getElementById('videoLightboxClose').addEventListener('click', () => {
-            videoLightbox.classList.remove('active');
+        function closeMenu() {
+            mobileMenu.classList.remove('active');
+            mobileOverlay.classList.remove('active');
             document.body.style.overflow = '';
-            lightboxVideo.pause();
-            lightboxVideo.src = '';
+        }
+
+        mobileMenuBtn.addEventListener('click', openMenu);
+        mobileMenuClose.addEventListener('click', closeMenu);
+        mobileOverlay.addEventListener('click', closeMenu);
+
+        // Gallery Lightbox
+        const galleryImages = [
+            'assets/balustrade.png', 'assets/shower.jpg', 'assets/gallery3.jpg', 'assets/gallery2.jpg', 'assets/gallery1.jpg',
+            'assets/gallery4.jpg', 'assets/gallery5.jpg', 'assets/office.png', 'assets/patio.jpg', 'assets/alum.jpg',
+            'assets/door.jpg', 'assets/gallery6.jpg', 'assets/gallery7.jpg', 'assets/gallery8.jpg', 'assets/gallery9.jpg',
+            'assets/gallery10.jpg', 'assets/gallery11.jpg', 'assets/gallery12.jpg', 'assets/gallery13.jpg', 'assets/gallery14.jpg',
+            'assets/gallery15.jpg', 'assets/gallery16.jpg', 'assets/gallery17.jpg', 'assets/gallery18.jpg', 'assets/gallery19.jpg',
+            'assets/gallery20.jpg', 'assets/gallery21.jpg', 'assets/gallery22.jpg', 'assets/gallery23.jpg', 'assets/gallery24.jpg',
+            'assets/gallery25.jpg', 'assets/gallery26.jpg', 'assets/gallery27.jpg'
+        ];
+        let currentImageIndex = 0;
+
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxPrev = document.getElementById('lightboxPrev');
+        const lightboxNext = document.getElementById('lightboxNext');
+
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', () => {
+                currentImageIndex = parseInt(item.dataset.index);
+                lightboxImg.src = galleryImages[currentImageIndex];
+                lightbox.classList.add('active');
+            });
         });
 
-        videoLightbox.addEventListener('click', e => {
-            if (e.target === videoLightbox) {
-                videoLightbox.classList.remove('active');
-                document.body.style.overflow = '';
-                lightboxVideo.pause();
-                lightboxVideo.src = '';
-            }
+        lightboxClose.addEventListener('click', () => lightbox.classList.remove('active'));
+        lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.classList.remove('active'); });
+
+        lightboxPrev.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            lightboxImg.src = galleryImages[currentImageIndex];
         });
 
-        // Smart Carousel Functionality
+        lightboxNext.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            lightboxImg.src = galleryImages[currentImageIndex];
+        });
+
+        // Carousel
         const carouselTrack = document.getElementById('carouselTrack');
-        const carouselSlides = carouselTrack.querySelectorAll('.carousel-slide');
         const carouselPrev = document.getElementById('carouselPrev');
         const carouselNext = document.getElementById('carouselNext');
-        const carouselDotsContainer = document.getElementById('carouselDots');
-        const carouselProgress = document.getElementById('carouselProgress');
-        const carousel = document.getElementById('carousel');
+        const carouselDots = document.getElementById('carouselDots');
+        const totalSlides = 5;
+        let currentSlide = 0;
 
-        let carouselIndex = 0;
-        let carouselInterval;
-        let isPaused = false;
-
-        // Create dots
-        carouselSlides.forEach((_, i) => {
+        for (let i = 0; i < totalSlides; i++) {
             const dot = document.createElement('div');
-            dot.classList.add('carousel-dot');
-            if (i === 0) dot.classList.add('active');
+            dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
             dot.addEventListener('click', () => goToSlide(i));
-            carouselDotsContainer.appendChild(dot);
-        });
-
-        const carouselDots = carouselDotsContainer.querySelectorAll('.carousel-dot');
-
-        function updateCarousel() {
-            carouselTrack.style.transform = `translateX(-${carouselIndex * 100}%)`;
-            carouselDots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === carouselIndex);
-            });
-            // Reset progress animation
-            carouselProgress.style.animation = 'none';
-            carouselProgress.offsetHeight; // Trigger reflow
-            carouselProgress.style.animation = 'progressBar 5s linear infinite';
-        }
-
-        function nextSlide() {
-            carouselIndex = (carouselIndex + 1) % carouselSlides.length;
-            updateCarousel();
-        }
-
-        function prevSlide() {
-            carouselIndex = (carouselIndex - 1 + carouselSlides.length) % carouselSlides.length;
-            updateCarousel();
+            carouselDots.appendChild(dot);
         }
 
         function goToSlide(index) {
-            carouselIndex = index;
-            updateCarousel();
-            resetAutoPlay();
+            currentSlide = index;
+            carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+            document.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentSlide);
+            });
         }
 
-        function startAutoPlay() {
-            carouselInterval = setInterval(() => {
-                if (!isPaused) nextSlide();
-            }, 5000);
-        }
+        carouselPrev.addEventListener('click', () => goToSlide((currentSlide - 1 + totalSlides) % totalSlides));
+        carouselNext.addEventListener('click', () => goToSlide((currentSlide + 1) % totalSlides));
 
-        function resetAutoPlay() {
-            clearInterval(carouselInterval);
-            startAutoPlay();
-        }
+        setInterval(() => goToSlide((currentSlide + 1) % totalSlides), 5000);
 
-        carouselPrev.addEventListener('click', () => { prevSlide(); resetAutoPlay(); });
-        carouselNext.addEventListener('click', () => { nextSlide(); resetAutoPlay(); });
+        // Video Lightbox
+        const videoItems = document.querySelectorAll('.video-item');
+        const videoLightbox = document.getElementById('videoLightbox');
+        const lightboxVideoEl = document.getElementById('lightboxVideo');
+        const videoLightboxClose = document.getElementById('videoLightboxClose');
 
-        carousel.addEventListener('mouseenter', () => { isPaused = true; });
-        carousel.addEventListener('mouseleave', () => { isPaused = false; });
-
-        // Touch/swipe support
-        let touchStartX = 0;
-        carousel.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; });
-        carousel.addEventListener('touchend', e => {
-            const touchEndX = e.changedTouches[0].clientX;
-            const diff = touchStartX - touchEndX;
-            if (Math.abs(diff) > 50) {
-                if (diff > 0) nextSlide();
-                else prevSlide();
-                resetAutoPlay();
-            }
+        videoItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const videoSrc = item.dataset.video;
+                lightboxVideoEl.src = videoSrc;
+                videoLightbox.classList.add('active');
+                lightboxVideoEl.play();
+            });
         });
 
-        startAutoPlay();
+        videoLightboxClose.addEventListener('click', () => {
+            videoLightbox.classList.remove('active');
+            lightboxVideoEl.pause();
+            lightboxVideoEl.src = '';
+        });
+
+        videoLightbox.addEventListener('click', (e) => {
+            if (e.target === videoLightbox) {
+                videoLightbox.classList.remove('active');
+                lightboxVideoEl.pause();
+                lightboxVideoEl.src = '';
+            }
+        });
     </script>
 </body>
 
