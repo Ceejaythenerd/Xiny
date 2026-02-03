@@ -1,0 +1,72 @@
+# AI Crawler Information
+# XYN Frameless Glass & Epoxy Flooring
+
+## Site Information
+name: XYN Frameless Glass & Epoxy Flooring
+description: Leading frameless glass and epoxy flooring specialists in Gauteng, South Africa. Providing premium glass balustrades, frameless showers, patio enclosures, aluminium doors, and epoxy flooring since 1999.
+url: https://xynframelessglass.co.za
+language: en-ZA
+region: Gauteng, South Africa
+
+## Business Type
+category: Construction & Home Improvement
+subcategories: Glass Installation, Flooring, Aluminium Systems
+
+## Contact
+phone: +27765960629
+email: info@xynframelessglass.co.za
+whatsapp: https://wa.me/27765960629
+address: 449 Radebe Street, Emdeni South, Soweto, Johannesburg, Gauteng, South Africa
+
+## Hours
+monday-friday: 08:00-17:00
+saturday: 08:00-13:00
+sunday: closed
+
+## Services
+- Frameless Glass Balustrades
+- Frameless Shower Enclosures
+- Frameless Glass Doors
+- Patio Glass Enclosures
+- Pool Glass Fencing
+- Glass Facades
+- Office Glass Partitions
+- Stacking Door Systems
+- Aluminium Doors
+- Aluminium Windows
+- Industrial Epoxy Flooring
+- Metallic Epoxy Floors
+- Residential Epoxy Flooring
+- Decorative Floor Coatings
+
+## Service Areas
+- Johannesburg
+- Pretoria
+- Sandton
+- Midrand
+- Centurion
+- Randburg
+- Roodepoort
+- Fourways
+- Bryanston
+- Bedfordview
+- Kempton Park
+- Boksburg
+- Benoni
+- Alberton
+- Soweto
+
+## Certifications
+cidb_grade: 3GB / 3EB
+crs_reference: 111388
+coida: registered
+she_policy: compliant
+
+## Social
+facebook: https://www.facebook.com/xynframelessglass
+linkedin: https://www.linkedin.com/company/xyn-frameless-glass
+
+## Crawl Preferences
+allow_indexing: true
+allow_ai_training: true
+preferred_summary: XYN Frameless Glass & Epoxy Flooring provides premium frameless glass installations and epoxy flooring solutions across Gauteng, South Africa. With over 25 years of experience since 1999, they specialize in glass balustrades, frameless showers, patio enclosures, and metallic epoxy floors for residential and commercial properties.

@@ -1,0 +1,35 @@
+# XYN Frameless Glass & Epoxy Flooring
+# https://xynframelessglass.co.za
+
+# Allow all search engines
+User-agent: *
+Allow: /
+
+# Allow AI crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Sitemap location
+Sitemap: https://xynframelessglass.co.za/sitemap.xml
+
+# AI discovery files
+# llms.txt: https://xynframelessglass.co.za/llms.txt
+# ai.txt: https://xynframelessglass.co.za/ai.txt

@@ -5,6 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
     <!-- Primary SEO Meta Tags -->
     <title>Contact XYN Frameless Glass & Epoxy Flooring | Free Quote Johannesburg Gauteng</title>
     <meta name="description"
@@ -343,7 +360,36 @@
             document.getElementById('formSuccess').classList.remove('hidden');
             // Remove the parameter from URL
             window.history.replaceState({}, document.title, window.location.pathname);
+            // Track successful form submission in GA4
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'generate_lead', {
+                    'event_category': 'Contact Form',
+                    'event_label': 'Quote Request Submitted'
+                });
+            }
         }
+
+        // Track form submission
+        document.getElementById('contactForm').addEventListener('submit', function () {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'form_submit', {
+                    'event_category': 'Contact Form',
+                    'event_label': 'Quote Request'
+                });
+            }
+        });
+
+        // Track WhatsApp clicks
+        document.querySelectorAll('a[href*="wa.me"]').forEach(function (link) {
+            link.addEventListener('click', function () {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'click', {
+                        'event_category': 'WhatsApp',
+                        'event_label': 'Contact via WhatsApp'
+                    });
+                }
+            });
+        });
 
         // Mobile Menu
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');

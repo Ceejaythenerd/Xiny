@@ -5,6 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <!-- Search Engine Verification (Replace with your codes) -->
+    <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE">
+    <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE">
+
     <!-- Primary SEO Meta Tags -->
     <title>Frameless Glass & Epoxy Flooring Johannesburg | XYN Frameless Glass Gauteng</title>
     <meta name="description"
@@ -161,6 +184,47 @@
     }
     </script>
 
+    <!-- WebSite Schema for Sitelinks Search -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "XYN Frameless Glass & Epoxy Flooring",
+        "alternateName": "XYN Glass",
+        "url": "https://xynframelessglass.co.za",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://xynframelessglass.co.za/services.html?search={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "XYN Frameless Glass & Epoxy Flooring",
+        "url": "https://xynframelessglass.co.za",
+        "logo": "https://xynframelessglass.co.za/assets/logo.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+27-76-596-0629",
+            "contactType": "sales",
+            "availableLanguage": ["English"]
+        },
+        "sameAs": [
+            "https://www.facebook.com/xynframelessglass",
+            "https://www.linkedin.com/company/xyn-frameless-glass",
+            "https://wa.me/27765960629"
+        ]
+    }
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/styles.css">
@@ -211,7 +275,7 @@
     <section id="home" class="relative h-[600px] overflow-hidden bg-[#1A3A4A]">
         <div class="absolute inset-0">
             <img src="assets/hero.jpg" class="w-full h-full object-cover opacity-80 hero-animation"
-                alt="Modern Glass Interior">
+                alt="Modern Glass Interior" fetchpriority="high">
             <div class="absolute inset-0 hero-overlay"></div>
         </div>
 
@@ -358,12 +422,18 @@
             </div>
             <div class="home-carousel" id="homeCarousel">
                 <div class="home-carousel-track" id="homeCarouselTrack">
-                    <div class="home-carousel-slide"><img src="assets/gallery7.jpg" alt="Luxury Estate"></div>
-                    <div class="home-carousel-slide"><img src="assets/balustrade.png" alt="Glass Balustrade"></div>
-                    <div class="home-carousel-slide"><img src="assets/gallery23.jpg" alt="Night Patio"></div>
-                    <div class="home-carousel-slide"><img src="assets/shower.jpg" alt="Frameless Shower"></div>
-                    <div class="home-carousel-slide"><img src="assets/gallery21.jpg" alt="Estate View"></div>
-                    <div class="home-carousel-slide"><img src="assets/patio.jpg" alt="Patio Doors"></div>
+                    <div class="home-carousel-slide"><img src="assets/gallery7.jpg"
+                            alt="Luxury Estate Glass Balustrade Installation" loading="lazy"></div>
+                    <div class="home-carousel-slide"><img src="assets/balustrade.png"
+                            alt="Frameless Glass Balustrade Johannesburg" loading="lazy"></div>
+                    <div class="home-carousel-slide"><img src="assets/gallery23.jpg"
+                            alt="Glass Patio Enclosure Night View" loading="lazy"></div>
+                    <div class="home-carousel-slide"><img src="assets/shower.jpg"
+                            alt="Frameless Shower Enclosure Gauteng" loading="lazy"></div>
+                    <div class="home-carousel-slide"><img src="assets/gallery21.jpg"
+                            alt="Modern Estate Glass Installation" loading="lazy"></div>
+                    <div class="home-carousel-slide"><img src="assets/patio.jpg" alt="Stacking Patio Doors"
+                            loading="lazy"></div>
                 </div>
             </div>
             <div class="flex justify-center mt-8 gap-4">
@@ -504,52 +574,52 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Balustrades -->
                 <div class="service-card flex flex-col items-center">
-                    <img src="assets/balustrade.png?auto=forma&fit=crop&w=600&q=80"
+                    <img src="assets/balustrade.png" loading="lazy" decoding="async"
                         class="w-full h-52 object-cover mb-6 grayscale hover:grayscale-0 transition duration-500"
-                        alt="Balustrades">
+                        alt="Frameless Glass Balustrades Johannesburg">
                     <h4 class="text-xs font-black text-gray-700 uppercase tracking-widest mb-6">Balustrades</h4>
                     <a href="services.html" class="btn-outline-blue mb-8">View</a>
                 </div>
                 <!-- Showers -->
                 <div class="service-card flex flex-col items-center">
-                    <img src="assets/shower.jpg?auto=format&fit=crop&w=600&q=80"
+                    <img src="assets/shower.jpg" loading="lazy" decoding="async"
                         class="w-full h-52 object-cover mb-6 grayscale hover:grayscale-0 transition duration-500"
-                        alt="Showers">
+                        alt="Frameless Shower Enclosures Gauteng">
                     <h4 class="text-xs font-black text-gray-700 uppercase tracking-widest mb-6">Showers & Shower Service
                     </h4>
                     <a href="services.html" class="btn-outline-blue mb-8">View</a>
                 </div>
                 <!-- Enclosures -->
                 <div class="service-card flex flex-col items-center">
-                    <img src="assets/office.png?auto=format&fit=crop&w=600&q=80"
+                    <img src="assets/office.png" loading="lazy" decoding="async"
                         class="w-full h-52 object-cover mb-6 grayscale hover:grayscale-0 transition duration-500"
-                        alt="Enclosures">
+                        alt="Frameless Office Glass Enclosures">
                     <h4 class="text-xs font-black text-gray-700 uppercase tracking-widest mb-6">Frameless Enclosures
                     </h4>
                     <a href="services.html" class="btn-outline-blue mb-8">View</a>
                 </div>
                 <!-- Patio -->
                 <div class="service-card flex flex-col items-center">
-                    <img src="assets/patio.jpg?auto=format&fit=crop&w=600&q=80"
+                    <img src="assets/patio.jpg" loading="lazy" decoding="async"
                         class="w-full h-52 object-cover mb-6 grayscale hover:grayscale-0 transition duration-500"
-                        alt="Patio Enclosures">
+                        alt="Glass Patio Enclosures South Africa">
                     <h4 class="text-xs font-black text-gray-700 uppercase tracking-widest mb-6">Patio Enclosures</h4>
                     <a href="services.html" class="btn-outline-blue mb-8">View</a>
                 </div>
                 <!-- Aluminium -->
                 <div class="service-card flex flex-col items-center">
-                    <img src="assets/alum.jpg?auto=format&fit=crop&w=600&q=80"
+                    <img src="assets/alum.jpg" loading="lazy" decoding="async"
                         class="w-full h-52 object-cover mb-6 grayscale hover:grayscale-0 transition duration-500"
-                        alt="Aluminium">
+                        alt="Aluminium Doors and Windows Pretoria">
                     <h4 class="text-xs font-black text-gray-700 uppercase tracking-widest mb-6">Aluminium Doors &
                         Windows</h4>
                     <a href="services.html" class="btn-outline-blue mb-8">View</a>
                 </div>
                 <!-- Epoxy Flooring -->
                 <div class="service-card flex flex-col items-center">
-                    <img src="assets/gallery5.jpg?auto=format&fit=crop&w=600&q=80"
+                    <img src="assets/gallery5.jpg" loading="lazy" decoding="async"
                         class="w-full h-52 object-cover mb-6 grayscale hover:grayscale-0 transition duration-500"
-                        alt="Epoxy Flooring">
+                        alt="Epoxy Flooring Johannesburg Gauteng">
                     <h4 class="text-xs font-black text-gray-700 uppercase tracking-widest mb-6">Epoxy Flooring</h4>
                     <a href="services.html" class="btn-outline-blue mb-8">View</a>
                 </div>
