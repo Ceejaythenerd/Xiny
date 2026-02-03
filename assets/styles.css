@@ -1175,3 +1175,294 @@ body {
         font-size: 0.75rem;
     }
 }
+
+/* ============================================
+   ENHANCED MOBILE RESPONSIVENESS
+   ============================================ */
+
+/* Ensure smooth scrolling on iOS */
+html {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
+/* Prevent horizontal scroll */
+body {
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* Mobile-first touch targets (minimum 44px for accessibility) */
+@media (max-width: 768px) {
+    /* Touch-friendly buttons and links */
+    a, button {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    /* Hero section mobile optimization */
+    #home {
+        height: auto;
+        min-height: 500px;
+        padding: 60px 0;
+    }
+
+    #home h1 {
+        font-size: 1.75rem !important;
+        line-height: 1.3;
+    }
+
+    #home .max-w-3xl {
+        padding: 0 1rem;
+    }
+
+    /* Header mobile spacing */
+    header {
+        padding: 0.75rem 1rem !important;
+    }
+
+    header img {
+        height: 40px !important;
+    }
+
+    /* Top bar mobile */
+    .top-bar-info {
+        font-size: 0.65rem;
+        padding: 0.5rem;
+    }
+
+    /* Footer mobile layout */
+    footer {
+        padding: 2rem 1rem !important;
+    }
+
+    footer .grid {
+        gap: 2rem;
+    }
+
+    /* Service cards mobile spacing */
+    .service-card {
+        margin-bottom: 1rem;
+    }
+
+    .service-card img {
+        height: 200px;
+    }
+
+    /* Testimonial mobile */
+    .testimonial-card {
+        margin: 0 0.5rem;
+    }
+
+    /* Stats section mobile */
+    .stat-item {
+        padding: 1rem;
+    }
+
+    /* CTA banner mobile */
+    .cta-banner h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Contact form mobile */
+    .form-container {
+        margin: 0 0.5rem;
+    }
+
+    /* Quick action cards mobile */
+    .quick-action {
+        min-height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    /* Glass cards mobile */
+    .glass-card {
+        margin-bottom: 1rem;
+    }
+
+    /* Timeline mobile */
+    .timeline-item {
+        padding-left: 1.5rem;
+    }
+
+    .timeline-item::before {
+        left: -0.75rem;
+        width: 10px;
+        height: 10px;
+    }
+
+    /* Value cards mobile */
+    .value-card {
+        padding: 1.5rem;
+    }
+
+    /* Gallery grid mobile */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+
+    /* Video gallery mobile */
+    .video-item video {
+        height: 180px;
+    }
+}
+
+/* Extra small screens (portrait phones) */
+@media (max-width: 480px) {
+    /* Hero mobile extra small */
+    #home {
+        min-height: 450px;
+    }
+
+    #home h1 {
+        font-size: 1.5rem !important;
+    }
+
+    #home a {
+        padding: 12px 20px !important;
+        font-size: 0.65rem !important;
+    }
+
+    /* Navigation CTA button mobile */
+    .nav-cta {
+        padding: 10px 16px !important;
+        font-size: 0.65rem !important;
+    }
+
+    /* Section titles mobile */
+    section h2 {
+        font-size: 1.5rem !important;
+    }
+
+    section p {
+        font-size: 0.875rem;
+    }
+
+    /* Cards extra padding reduction */
+    .feature-card,
+    .service-card,
+    .testimonial-card,
+    .glass-card {
+        padding: 1rem;
+    }
+
+    /* Footer social icons */
+    .social-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    /* Contact info text */
+    .glass-card h3 {
+        font-size: 1rem;
+    }
+
+    .glass-card p,
+    .glass-card a {
+        font-size: 0.85rem;
+    }
+
+    /* Gallery 1 column on very small screens */
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Medium screens (tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Tablet-specific adjustments */
+    .home-carousel-slide {
+        min-width: 50%;
+    }
+
+    .carousel-slide img {
+        height: 400px;
+    }
+
+    .feature-card {
+        padding: 2rem;
+    }
+
+    .testimonial-card {
+        padding: 1.75rem;
+    }
+}
+
+/* Landscape mobile orientation */
+@media (max-width: 768px) and (orientation: landscape) {
+    #home {
+        min-height: 350px;
+        padding: 40px 0;
+    }
+
+    #home h1 {
+        font-size: 1.5rem !important;
+    }
+
+    .lightbox img,
+    .video-lightbox video {
+        max-height: 70vh;
+    }
+}
+
+/* High DPI / Retina displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero-animation {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .hero-animation {
+        animation: none;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* Print styles */
+@media print {
+    .mobile-menu,
+    .mobile-overlay,
+    .cookie-banner,
+    header button,
+    .lightbox,
+    .video-lightbox {
+        display: none !important;
+    }
+
+    body {
+        font-size: 12pt;
+        color: black;
+        background: white;
+    }
+}
+
+/* iOS Safari notch support */
+@supports (padding-top: env(safe-area-inset-top)) {
+    header {
+        padding-top: env(safe-area-inset-top);
+    }
+
+    .cookie-banner {
+        padding-bottom: calc(1.5rem + env(safe-area-inset-bottom));
+    }
+
+    .mobile-menu {
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
